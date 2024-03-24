@@ -1,0 +1,73 @@
+.blog__content img {
+    width        : 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+ }
+ 
+ .blog__comment {
+    border-radius: 0.5rem;
+    border       : 1px solid var(--secondary-color);
+    padding      : 1.5rem;
+ }
+ 
+ .blog__info h2 {
+    font-size: 1.5rem;
+    color: var(--heading-color)
+ }
+ 
+ .blog__info p {
+    line-height: 30px;
+    font-size  : 1rem;
+    color      : var(--text-color);
+ }
+ 
+ .comment__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-color);
+ }
+ 
+ .comment__input input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    outline: none;
+ }
+ 
+ .user__comment {
+    margin-top: 2.5rem;
+ }
+ 
+ .comment__item {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+ }
+ 
+ .comment__item img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50px;
+    object-fit: cover;
+ }
+ 
+ .comment__item h5,
+ .comment__item p,
+ .comment__item h6 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+ }
+ 
+ .comment__item p,
+ .comment__item h6 {
+    color: var(--text-color);
+ }
+ 
+ /* =============== RESPONSIVE ================ */
+ @media only screen and (max-width: 768px) {
+ }  

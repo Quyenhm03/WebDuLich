@@ -1,0 +1,7 @@
+.sidebar__dashboard {
+    padding      : 2rem;
+    border-radius: 0.5rem;
+    border       : 1px solid var(--secondary-color);
+    position     : sticky;
+    top          : 80px;
+ }

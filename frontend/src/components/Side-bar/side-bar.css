@@ -1,0 +1,54 @@
+.sidebar {
+    width: 400px; 
+    padding      : 2rem;
+    border-radius: 0.5rem;
+    border       : 1px solid var(--secondary-color);
+    position     : sticky;
+    top          : 80px;
+}
+
+.sidebar h1 {
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+.sidebar__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar__item img {
+    width: 60px; /* Định rõ kích thước ảnh */
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.sidebar__item h2 {
+    font-size: 16px; /* Định rõ kích thước chữ tiêu đề */
+}
+
+.blog_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  .blog_title a {
+    text-decoration: none;
+    color: #555555;
+    transition: color 0.3s ease;
+  }
+  
+  .blog_title a:hover {
+    color: #000000;
+  }
+  
+  .blog_title h2 {
+    font-size: 16px;
+    margin: 0;
+  }
