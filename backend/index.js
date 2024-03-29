@@ -14,7 +14,7 @@ import sendEmailRoute from './routes/sendEmail.js'
 
 dotenv.config()
 const app = express()
-const port = process.env.PORT || 4000
+const port = process.env.PORT
 const corsOptions = {
    origin: true,
    credentials: true
