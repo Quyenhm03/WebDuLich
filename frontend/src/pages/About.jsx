@@ -3,6 +3,7 @@ import Subtitle from '../shared/Subtitle'
 import '../styles/about.css'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import OurTeam from '../components/Our-team/OurTeam'
+import Newsletter from './../shared/Newsletter'
 
 const About = () => {
   return (
@@ -74,6 +75,7 @@ const About = () => {
             </Row>
          </Container>
       </section>
+      <Newsletter />
     </div>
   )
 }
