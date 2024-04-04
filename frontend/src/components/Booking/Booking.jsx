@@ -41,7 +41,8 @@ const Booking = ({ tour, avgRating }) => {
          const res = await fetch(`${BASE_URL}/booking`, {
             method: 'post',
             headers: {
-               'content-type': 'application/json'
+               'content-type': 'application/json',
+               'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             credentials: 'include',
             body: JSON.stringify(booking)
@@ -60,7 +61,8 @@ const Booking = ({ tour, avgRating }) => {
          const eres = await fetch(`${BASE_URL}/sendEmail`, {
             method: 'post',
             headers: {
-               'content-type': 'application/json'
+               'content-type': 'application/json',
+               'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             credentials: 'include',
             body: JSON.stringify(email)
