@@ -37,7 +37,8 @@ const BlogDetails = () => {
          const res = await fetch(`${BASE_URL}/comment/${id}`, {
             method: 'post',
             headers: {
-               'content-type': 'application/json'
+               'content-type': 'application/json',
+               'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             credentials: 'include',
             body: JSON.stringify(commentObj)

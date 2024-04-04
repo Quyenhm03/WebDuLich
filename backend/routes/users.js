@@ -15,7 +15,7 @@ router.delete('/:id', verifyAdmin, deleteUser)
 router.get('/:id', verifyUser, getSingleUser)
 
 //Get all user
-router.get('/',  getAllUser)
+router.get('/', verifyAdmin, getAllUser)
 
 //Get user count
 router.get('/search/getUserCount', getUserCount)

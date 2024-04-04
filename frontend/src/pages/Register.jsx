@@ -71,6 +71,7 @@ const Register = () => {
          if(!res.ok) alert(dt.message)
          console.log(dt.data)
 
+         localStorage.setItem('token', dt.accessToken)
          dispatch({type:"LOGIN_SUCCESS", payload:dt.data})
          navigate('/')
       } catch (err) {

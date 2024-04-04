@@ -10,7 +10,13 @@ const useFetch = (url) => {
          setLoading(true)
 
          try {
-            const res = await fetch(url)
+            const res = await fetch(url, {
+               method: 'GET',
+               headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+               },
+               credentials: 'include'
+            })
 
             if(!res.ok) {
                setError('Failed to fetch')

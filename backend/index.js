@@ -42,6 +42,9 @@ app.use("/api/v1/booking", bookingRoute)
 app.use("/api/v1/comment", commentRoute)
 app.use("/api/v1/blog", blogRoute)
 app.use("/api/v1/sendEmail", sendEmailRoute)
+app.use((req, res) => {
+   return res.send('404 not found')
+})
 
 app.listen(port, () => {
    connect()

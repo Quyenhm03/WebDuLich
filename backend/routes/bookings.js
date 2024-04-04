@@ -6,9 +6,9 @@ const router = express.Router()
 
 router.post('/', verifyUser, createBooking)
 router.get('/:id', getBooking)
-router.get('/', getAllBooking)
-router.delete('/:id', deleteBooking)
-router.put('/:id', updateBooking)
+router.get('/', verifyAdmin, getAllBooking)
+router.delete('/:id', verifyAdmin, deleteBooking)
+router.put('/:id', verifyAdmin, updateBooking)
 router.get('/search/getBookingCount', getBookingCount)
 
 export default router

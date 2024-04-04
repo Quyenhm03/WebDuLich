@@ -23,7 +23,8 @@ const UploadBlog = () => {
            const res = await fetch(`${BASE_URL}/blog`, {
               method: 'post',
               headers: {
-                 'content-type': 'application/json'
+                 'content-type': 'application/json',
+                 'Authorization': `Bearer ${localStorage.getItem('token')}`
               },
               credentials: 'include',
               body: JSON.stringify(blog)

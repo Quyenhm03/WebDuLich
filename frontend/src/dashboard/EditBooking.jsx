@@ -27,7 +27,8 @@ const EditBooking = () => {
            const res = await fetch(`${BASE_URL}/booking/${id}`, {
               method: 'put',
               headers: {
-                 'content-type': 'application/json'
+                 'content-type': 'application/json',
+                 'Authorization': `Bearer ${localStorage.getItem('token')}`
               },
               credentials: 'include',
               body: JSON.stringify(bookingup)

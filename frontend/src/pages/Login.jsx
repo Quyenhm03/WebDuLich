@@ -42,6 +42,8 @@ const Login = () => {
          if(!res.ok) alert(result.message)
          console.log(result.data)
 
+         localStorage.setItem('token', result.accessToken)
+         // console.log(localStorage.getItem('token'))
          dispatch({type:"LOGIN_SUCCESS", payload:result.data})
          navigate('/')
       } catch(err) {
@@ -74,6 +76,7 @@ const Login = () => {
          if(!res.ok) alert(dt.message)
          console.log(dt.data)
 
+         localStorage.setItem('token', dt.accessToken)
          dispatch({type:"LOGIN_SUCCESS", payload:dt.data})
          navigate('/')
       } catch (err) {
@@ -81,7 +84,7 @@ const Login = () => {
       }
    }
 
-   return (
+   return (<>
       <section>
          <Container>
             <Row>
@@ -120,6 +123,7 @@ const Login = () => {
             </Row>
          </Container>
       </section>
+   </>
    )
 }
 

@@ -23,6 +23,9 @@ const ManageTour = () => {
         try {
           const res = await fetch(`${BASE_URL}/tours/${id}`, {
             method: 'delete',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
             credentials: 'include'
           });
       

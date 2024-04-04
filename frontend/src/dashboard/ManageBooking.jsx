@@ -23,6 +23,9 @@ const ManageBooking = () => {
         try {
           const res = await fetch(`${BASE_URL}/booking/${id}`, {
             method: 'delete',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
             credentials: 'include'
           });
       
@@ -38,6 +41,7 @@ const ManageBooking = () => {
 
   return (
     <>
+    
     <section>
         <Container>
             <Row>
@@ -45,10 +49,7 @@ const ManageBooking = () => {
                     <SideBar/>
                 </Col>
                 <Col className='sidebar__dashboard' lg='9'>
-                    <div className='flex items-center justify-between m-4'>
-                        <h5>Manage All Booking</h5>
-                        <h5>Total Bookings: {bookingCount}</h5>
-                    </div>
+                    <h5>Manage All Booking</h5>
                     <div className="overflow-x-auto">
                         <Table hoverable>
                             <Table.Head>
@@ -107,6 +108,7 @@ const ManageBooking = () => {
             </Row>
         </Container>
     </section>
+    
 </>
   )
 }

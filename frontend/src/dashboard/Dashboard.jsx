@@ -1,7 +1,7 @@
 import React from 'react'
 import SideBar from './SideBar'
 import { Container, Row, Col } from 'reactstrap'
-import { FaRegCalendarMinus, FaEllipsisV } from "react-icons/fa"
+import { FaRegCalendarMinus } from "react-icons/fa"
 import { FaUser } from "react-icons/fa6";
 import { MdOutlineTour } from "react-icons/md";
 import { BASE_URL } from '../utils/config'

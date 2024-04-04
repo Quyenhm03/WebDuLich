@@ -53,8 +53,9 @@ export const login = async (req, res) => {
       // set token in the browser cookies and send the response to the client
       res.cookie('accessToken', token, {
          httpOnly: true,
+         secure: true,
          expires: token.expiresIn
-      }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}})
+      }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}, accessToken: token})
    } catch (error) {
       res.status(500).json({ susccess: false, message: "Failed to login" })
    }
@@ -76,9 +77,8 @@ export const google = async (req, res) => {
          // set token in the browser cookies and send the response to the client
          res.cookie('accessToken', token, {
             httpOnly: true,
-            secure: true,
             expires: token.expiresIn
-         }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}})
+         }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}, accessToken: token})
       } else {
          const generatedPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
          const hashedPassword = bcrypt.hashSync(generatedPassword, 10)
@@ -99,7 +99,7 @@ export const google = async (req, res) => {
             httpOnly: true,
             secure: true,
             expires: token.expiresIn
-         }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}})
+         }).status(200).json({success: true, message:"Succesfully login", data:{role, ...rest}, accessToken: token})
 
       }
 
