@@ -16,7 +16,7 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT
 const corsOptions = {
-   origin: ['https://webdulich.onrender.com', 'https://webdulich-fe.onrender.com'],
+   origin: true,
    credentials: true
 }
 
