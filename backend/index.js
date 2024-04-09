@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import cookieParser from "cookie-parser";
+import paypal from 'paypal-rest-sdk'
 import tourRoute from './routes/tours.js'
 import userRoute from './routes/users.js'
 import authRoute from './routes/auth.js'
