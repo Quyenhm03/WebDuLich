@@ -79,6 +79,44 @@ const Booking = ({ tour, avgRating }) => {
       }   
    }
 
+   const handlePayClick = async e => {
+      e.preventDefault()
+      // console.log(booking)
+
+      try {
+         if (!user || user === undefined || user === null) {
+            return alert('Please sign in')
+         }
+
+         const payment = {booking: booking, totalAmount: totalAmount}
+         // console.log(payment)
+         const res = await fetch(`${BASE_URL}/pay`, {
+            method: 'post',
+            // mode: 'no-cors',
+            headers: {
+               'Access-Control-Allow-Origin': '*',
+               'content-type': 'application/json',
+               'Authorization': `Bearer ${localStorage.getItem('token')}`,
+               
+            },
+            credentials: 'include',
+            body: JSON.stringify(payment)
+         })
+
+         // console.log(payment)
+         const result = await res.json()
+
+         if(!res.ok) {
+            return alert(result.message)
+         }
+         window.location = result.forwardLink
+         // navigate('/thank-you')
+
+      } catch (error) {
+         alert(error.message)
+      }   
+   }
+
    return (
       <div className='booking'>
          <div className="booking__top d-flex align-items-center justify-content-between">
@@ -128,8 +166,9 @@ const Booking = ({ tour, avgRating }) => {
                   <span>${totalAmount}</span>
                </ListGroupItem>
             </ListGroup>
-
-            <Button className='btn primary__btn w-100 mt-4' onClick={handleClick}>Book Now</Button>
+            <Button className='btn primary__btn w-100 mt-4' onClick={handlePayClick}>Booking with Paypal</Button>
+            <span className='centered-text'>or</span>
+            <Button className='btn primary__btn w-100 mt-4' onClick={handleClick}>Booking with Email</Button>
          </div>
       </div>
    )

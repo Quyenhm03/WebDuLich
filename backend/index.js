@@ -11,8 +11,16 @@ import bookingRoute from './routes/bookings.js'
 import commentRoute from './routes/comments.js'
 import blogRoute from './routes/blogs.js'
 import sendEmailRoute from './routes/sendEmail.js'
+import payRoute from './routes/pay.js'
 
 dotenv.config()
+
+paypal.configure({
+   'mode': 'sandbox', //sandbox or live
+   'client_id': process.env.client_id,
+   'client_secret': process.env.client_secret
+});
+
 const app = express()
 const port = process.env.PORT
 const corsOptions = {
@@ -42,6 +50,7 @@ app.use("/api/v1/booking", bookingRoute)
 app.use("/api/v1/comment", commentRoute)
 app.use("/api/v1/blog", blogRoute)
 app.use("/api/v1/sendEmail", sendEmailRoute)
+app.use("/api/v1/pay", payRoute)
 app.use((req, res) => {
    return res.send('404 not found')
 })

@@ -83,3 +83,10 @@
     transform: scale(1.1);
     transition: 0.5s;
  }
+
+ .centered-text {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 10px; /* Tùy chỉnh khoảng cách giữa "or" và các nút */
+ }
