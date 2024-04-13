@@ -91,30 +91,33 @@ const Booking = ({ tour, avgRating }) => {
          if (!user || user === undefined || user === null) {
             return alert('Please sign in')
          }
+         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != ''){
+            const payment = {booking: booking, totalAmount: totalAmount}
+            // console.log(payment)
+            const res = await fetch(`${BASE_URL}/pay`, {
+               method: 'post',
+               // mode: 'no-cors',
+               headers: {
+                  'Access-Control-Allow-Origin': '*',
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  
+               },
+               credentials: 'include',
+               body: JSON.stringify(payment)
+            })
 
-         const payment = {booking: booking, totalAmount: totalAmount}
-         // console.log(payment)
-         const res = await fetch(`${BASE_URL}/pay`, {
-            method: 'post',
-            // mode: 'no-cors',
-            headers: {
-               'Access-Control-Allow-Origin': '*',
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`,
-               
-            },
-            credentials: 'include',
-            body: JSON.stringify(payment)
-         })
+            // console.log(payment)
+            const result = await res.json()
 
-         // console.log(payment)
-         const result = await res.json()
-
-         if(!res.ok) {
-            return alert(result.message)
+            if(!res.ok) {
+               return alert(result.message)
+            }
+            window.location = result.forwardLink
+            // navigate('/thank-you')
+         } else {
+            return alert('Please fill out the form!')
          }
-         window.location = result.forwardLink
-         // navigate('/thank-you')
 
       } catch (error) {
          alert(error.message)
