@@ -31,7 +31,8 @@ const Register = () => {
          const res = await fetch(`${BASE_URL}/auth/register`, {
             method:'post',
             headers: {
-               'content-type':'application/json'
+               'content-type':'application/json',
+               "Access-Control-Allow-Origin": "*"
             },
             body: JSON.stringify(credentials)
          })

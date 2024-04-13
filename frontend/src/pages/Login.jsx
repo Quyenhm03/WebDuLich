@@ -63,10 +63,10 @@ const Login = () => {
             method:'post',
             headers: {
                'content-type':'application/json',
-               "Access-Control-Allow-Origin": "*",
-               'Cross-Origin-Opener-Policy': 'unsafe-none',
-               'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
-               'Cross-Origin-Opener-Policy': 'same-origin'
+               "Access-Control-Allow-Origin": "*"
+               // 'Cross-Origin-Opener-Policy': 'unsafe-none',
+               // 'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+               // 'Cross-Origin-Opener-Policy': 'same-origin'
             },
             credentials:'include',
             body: JSON.stringify({
