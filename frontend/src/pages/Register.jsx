@@ -57,7 +57,8 @@ const Register = () => {
          const res = await fetch(`${BASE_URL}/auth/google`, {
             method:'post',
             headers: {
-               'content-type':'application/json'
+               'content-type':'application/json',
+               'Access-Control-Allow-Origin': '*',
             },
             credentials:'include',
             body: JSON.stringify({
