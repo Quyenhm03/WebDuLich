@@ -58,7 +58,6 @@ const Register = () => {
             method:'post',
             headers: {
                'content-type':'application/json',
-               'Access-Control-Allow-Origin': '*',
             },
             credentials:'include',
             body: JSON.stringify({
