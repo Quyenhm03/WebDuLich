@@ -25,7 +25,7 @@ paypal.configure({
 const app = express()
 const port = process.env.PORT
 const corsOptions = {
-   origin: true,
+   origin: "*",
    credentials: true
 }
 
