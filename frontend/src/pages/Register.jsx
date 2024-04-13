@@ -7,7 +7,7 @@ import userIcon from '../assets/images/user.png'
 import { AuthContext } from '../context/AuthContext'
 import { BASE_URL } from '../utils/config'
 import Google from '../assets/images/google.png'
-import { GoogleAuthProvider, getAuth, signInWithPopup} from 'firebase/auth'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithRedirect} from 'firebase/auth'
 import { app } from '../firebase/firebaseConfig'
 
 const Register = () => {
@@ -53,7 +53,7 @@ const Register = () => {
          const provider = new GoogleAuthProvider()
          const auth = getAuth(app)
 
-         const result = await signInWithPopup(auth, provider)
+         const result = await signInWithRedirect(auth, provider)
          const res = await fetch(`${BASE_URL}/auth/google`, {
             method:'post',
             headers: {
