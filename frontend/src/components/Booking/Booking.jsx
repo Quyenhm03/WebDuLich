@@ -38,40 +38,44 @@ const Booking = ({ tour, avgRating }) => {
             return alert('Please sign in')
          }
 
-         const res = await fetch(`${BASE_URL}/booking`, {
-            method: 'post',
-            headers: {
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            credentials: 'include',
-            body: JSON.stringify(booking)
-         })
+         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != ''){
+            const res = await fetch(`${BASE_URL}/booking`, {
+               method: 'post',
+               headers: {
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+               },
+               credentials: 'include',
+               body: JSON.stringify(booking)
+            })
 
-         const result = await res.json()
+            const result = await res.json()
 
-         if(!res.ok) {
-            return alert(result.message)
-         }
-         navigate('/thank-you')
+            if(!res.ok) {
+               return alert(result.message)
+            }
+            navigate('/thank-you')
 
-         //send email
-         const email = {booking: booking, serviceFee: serviceFee, totalAmount: totalAmount}
-         console.log(email)
-         const eres = await fetch(`${BASE_URL}/sendEmail`, {
-            method: 'post',
-            headers: {
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            credentials: 'include',
-            body: JSON.stringify(email)
-         })
+            //send email
+            const email = {booking: booking, serviceFee: serviceFee, totalAmount: totalAmount}
+            console.log(email)
+            const eres = await fetch(`${BASE_URL}/sendEmail`, {
+               method: 'post',
+               headers: {
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+               },
+               credentials: 'include',
+               body: JSON.stringify(email)
+            })
 
-         const eresult = await eres.json()
+            const eresult = await eres.json()
 
-         if(!eres.ok) {
-            return alert(eresult.message)
+            if(!eres.ok) {
+               return alert(eresult.message)
+            }
+         } else {
+            return alert('Please fill out the form!')
          }
 
       } catch (error) {
