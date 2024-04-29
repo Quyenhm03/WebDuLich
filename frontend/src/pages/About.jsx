@@ -16,11 +16,11 @@ const About = () => {
                <Col lg='12' className='about__welcome mb-5'>
                   <Subtitle subtitle={'Về chúng tôi'} />
                   <h2>Chào mừng đến với TravelWorld</h2>
-                  <p>Chúng tôi là TracelWorld, nơi bạn khám phá mội góc cạnh của thế giới thông qua những hành trình thú vị.
+                  <p>Chúng tôi là TravelWorld, nơi bạn khám phá mọi góc cạnh của thế giới thông qua những hành trình thú vị.
                      Từ những cảnh quan tuyệt đẹp đến văn hóa đa dạng, chúng tôi cam kết đưa bạn đến những trải nghiệm mới mẻ và
                      khám phá những điều bạn chưa từng biết.<br />
                      <br />
-                     Tại TravelWorls, chúng tôi hiểu rằng mỗi hành trình là một câu chuyện riêng và chúng tôi luôn cố gắng tạo ra những
+                     Tại TravelWorld, chúng tôi hiểu rằng mỗi hành trình là một câu chuyện riêng và chúng tôi luôn cố gắng tạo ra những
                      chuyến đi phù hợp với sở thích cá nhân và mong muốn của bạn. Hãy cùng chúng tôi bước chân ra khỏi vùng an toàn và khám
                      phá thế giới đầy màu sắc. TravelWorld sẽ luôn đồng hành cùng bạn để mỗi khoảnh khắc đều tạo ra kỷ niệm.
                   </p>

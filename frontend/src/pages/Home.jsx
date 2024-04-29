@@ -31,7 +31,7 @@ const Home = () => {
                      <h1>Du lịch là cánh cửa tạo ra những <span className='hightlight'>kỷ niệm đáng nhớ</span></h1>
                      <p>
                         Du lịch là một cuộc hành trình kỳ diệu mở ra cánh cửa cho việc tạo ra những kỷ niệm đáng nhớ.
-                        Với mỗi điểm đên mới, các trải nghiệm đang chờ đợi, sẵn sàng khắc sâu vào tâm trí và trái tim chúng ta.
+                        Với mỗi điểm đến mới, các trải nghiệm đang chờ đợi, sẵn sàng khắc sâu vào tâm trí và trái tim chúng ta.
                         Những cảnh quan hùng vĩ, những nền văn hóa đa dạng và những cuộc gặp gỡ đều góp phần tạo nên những khoảnh
                         khắc đáng nhớ sau mỗi chuyến đi.
                      </p>

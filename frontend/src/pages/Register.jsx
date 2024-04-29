@@ -106,7 +106,7 @@ const Register = () => {
                            <FormGroup>
                               <input type="password" placeholder='Mật khẩu' id='password' onChange={handleChange} required />
                            </FormGroup>
-                           <Button className='btn secondary__btn auth__btn' type='submit'>Tạo tài khoảnt</Button>
+                           <Button className='btn secondary__btn auth__btn' type='submit'>Tạo tài khoản</Button>
                         </Form>
                         <p>Bạn đã có tài khoản? <Link to='/login'>Đăng nhập</Link></p>
                         <Button className='btn secondary__btn auth__btn' type='submit' onClick={handleGoogleClick}>
