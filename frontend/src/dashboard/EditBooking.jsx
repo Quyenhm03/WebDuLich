@@ -41,7 +41,7 @@ const EditBooking = () => {
            }
            totalAmount = Number(booking.tourPrice) * Number(bookingup.guestSize) + Number(serviceFee)
 
-           return alert("Update succesfully!")
+           return alert("Cập nhật thành công!")
 
         } catch (error) {
            alert(error.message)
@@ -60,42 +60,42 @@ const EditBooking = () => {
                     </Col>
                     <Col className='sidebar__dashboard' onSubmit={handleClick}>
                         <div className="contact__form">
-                        <h5>Edit booking</h5>
+                        <h5>Sửa booking</h5>
                         <Form className='contact__info-form'>
                             <FormGroup>
-                                <input type="text" placeholder='Tour Name' id='tourName' defaultValue={booking.tourName} required/>
+                                <input type="text" placeholder='Tên tour' id='tourName' defaultValue={booking.tourName} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Full Name' id='fullName' defaultValue={booking.fullName} onChange={handleChange} required/>
+                                <input type="text" placeholder='Họ tên' id='fullName' defaultValue={booking.fullName} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="number" placeholder='Guest Size' id='guestSize' defaultValue={booking.guestSize} onChange={handleChange} required/>
+                                <input type="number" placeholder='Số lượng khách' id='guestSize' defaultValue={booking.guestSize} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="number" placeholder='Phone' id='phone' defaultValue={booking.phone} onChange={handleChange} required/>
+                                <input type="number" placeholder='Số điện thoại' id='phone' defaultValue={booking.phone} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Book At' id='bookAt' defaultValue={booking.bookAt} onChange={handleChange} required/>
+                                <input type="text" placeholder='Đặt vào' id='bookAt' defaultValue={booking.bookAt} onChange={handleChange} required/>
                             </FormGroup>
                             <div className="booking__bottom">
                                 <ListGroup>
                                 <ListGroupItem className='border-0 px-0'>
-                                    <h5 className='d-flex align-items-center gap-1'>Price <i class='ri-close-line'></i> 1 person</h5>
+                                    <h5 className='d-flex align-items-center gap-1'>Giá <i class='ri-close-line'></i> 1 người</h5>
                                     <span> ${booking.tourPrice}</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='border-0 px-0'>
-                                    <h5>Service charge</h5>
+                                    <h5>Phí dịch vụ</h5>
                                     <span>${serviceFee}</span>
                                 </ListGroupItem>
                                 <ListGroupItem className='border-0 px-0 total'>
-                                    <h5>Total</h5>
+                                    <h5>Tổng</h5>
                                     <span>${totalAmount}</span>
                                 </ListGroupItem>
                                 </ListGroup>
                             </div>
                             <FormGroup>
                                 <div className="contact__button">
-                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Submit</Button>
+                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Lưu</Button>
                                 </div>
                             </FormGroup>
                         </Form>

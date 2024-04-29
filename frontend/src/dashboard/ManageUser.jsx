@@ -32,7 +32,7 @@ const ManageUser = () => {
             const result = await res.json();
             return alert(result.message);
           }
-          return alert("Delete successful!")
+          return alert("Xóa thành công")
         } catch (error) {
           alert(error.message);
         }
@@ -48,16 +48,16 @@ const ManageUser = () => {
                 </Col>
                 <Col className='sidebar__dashboard'>
                     <div className='flex items-center justify-between m-4'>
-                        <h5>Manage All User</h5>
-                        <h5>Total Users: {userCount}</h5>
+                        <h5>Quản lý tài khoản</h5>
+                        <h5>Số lượng tài khoản: {userCount}</h5>
                     </div>
                     <div className="overflow-x-auto">
                         <Table hoverable>
                             <Table.Head>
-                            <Table.HeadCell>Name</Table.HeadCell>
+                            <Table.HeadCell>Tên</Table.HeadCell>
                             <Table.HeadCell>Email</Table.HeadCell>
                             <Table.HeadCell>
-                                <span className="sr-only">Delete</span>
+                                <span className="sr-only">Xóa</span>
                             </Table.HeadCell>
                             </Table.Head>
                            
@@ -71,7 +71,7 @@ const ManageUser = () => {
                                         <Table.Cell>{user.email}</Table.Cell>
                                         <Table.Cell>
                                         <Table.Cell>
-                                            <Button onClick={() => handleDelete(user._id)}>Delete</Button>
+                                            <Button onClick={() => handleDelete(user._id)}>Xóa</Button>
                                         </Table.Cell>
                                         </Table.Cell>
                                     </Table.Row>

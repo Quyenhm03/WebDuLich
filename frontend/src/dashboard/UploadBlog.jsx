@@ -51,22 +51,22 @@ const UploadBlog = () => {
                     </Col>
                     <Col className='sidebar__dashboard'>
                         <div className="contact__form">
-                        <h5>Upload A Blog</h5>
+                        <h5>Thêm một Blog</h5>
                         <Form className='contact__info-form' onSubmit={handleClick}>
                             <FormGroup>
-                                <input type="text" placeholder='Title' id='title' onChange={handleChange} required/>
+                                <input type="text" placeholder='Tiêu đề' id='title' onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <input type="text" placeholder='Photo' id='photo' onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Content' id='content' onChange={handleChange} required/>
+                                <input type="text" placeholder='Nội dung' id='content' onChange={handleChange} required/>
                             </FormGroup>
                         </Form>
                         
                         <br/>
                         <div className="contact__button">
-                            <Button className='btn primary__btn w-25' onSubmit={handleClick}>Submit</Button>
+                            <Button className='btn primary__btn w-25' onSubmit={handleClick}>Lưu</Button>
                         </div>
                         </div>
                     </Col>

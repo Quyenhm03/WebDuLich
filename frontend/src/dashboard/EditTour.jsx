@@ -40,7 +40,7 @@ const EditTour = () => {
            if(!res.ok) {
               return alert(result.message)
            }
-           return alert("Update succesfully!")
+           return alert("Cập nhật thành công!")
         } catch (error) {
            alert(error.message)
         }   
@@ -56,38 +56,38 @@ const EditTour = () => {
                     </Col>
                     <Col className='sidebar__dashboard' onSubmit={handleClick}>
                         <div className="contact__form">
-                        <h5>Edit Tour</h5>
+                        <h5>Sửa Tour</h5>
                         <Form className='contact__info-form'>
                             <FormGroup>
-                                <input type="text" placeholder='Title' id='title' defaultValue={tour.title} onChange={handleChange} required/>
+                                <input type="text" placeholder='Tiêu đề' id='title' defaultValue={tour.title} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='City' id='city' defaultValue={tour.city} onChange={handleChange} required/>
+                                <input type="text" placeholder='Thành phố' id='city' defaultValue={tour.city} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Address' id='address' defaultValue={tour.address} onChange={handleChange} required/>
+                                <input type="text" placeholder='Địa chỉ' id='address' defaultValue={tour.address} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="number" placeholder='Distance' id='distance' defaultValue={tour.distance} onChange={handleChange} required/>
+                                <input type="number" placeholder='Khoảng cách' id='distance' defaultValue={tour.distance} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <input type="text" placeholder='Photo' id='photo' defaultValue={tour.photo} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="number" placeholder='Price' id='price' defaultValue={tour.price} onChange={handleChange} required/>
+                                <input type="number" placeholder='Giá' id='price' defaultValue={tour.price} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Description' id='desc' defaultValue={tour.desc} onChange={handleChange} required/>
+                                <input type="text" placeholder='Mô tả' id='desc' defaultValue={tour.desc} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="number" placeholder='Max Group Size' id='maxGroupSize' defaultValue={tour.maxGroupSize} onChange={handleChange} required/>
+                                <input type="number" placeholder='Số lượng khách tối đa' id='maxGroupSize' defaultValue={tour.maxGroupSize} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="checkbox" id="featured" name="featured" checked= {tour.featured} onChange={handleChange}/>Featured Tour
+                                <input type="checkbox" id="featured" name="featured" checked= {tour.featured} onChange={handleChange}/>Tour nổi bật
                             </FormGroup>
                             <FormGroup>
                                 <div className="contact__button">
-                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Submit</Button>
+                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Lưu</Button>
                                 </div>
                             </FormGroup>
                         </Form>

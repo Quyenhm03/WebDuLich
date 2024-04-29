@@ -33,7 +33,7 @@ const ManageBlog = () => {
             const result = await res.json();
             return alert(result.message);
           }
-          return alert("Delete successful!")
+          return alert("Xóa thành công!")
         } catch (error) {
           alert(error.message);
         }
@@ -48,13 +48,13 @@ const ManageBlog = () => {
                     <SideBar/>
                 </Col>
                 <Col className='sidebar__dashboard'>
-                    <h5>Manage All Blog</h5>
+                    <h5>Quản lý Blog</h5>
                     <div className="overflow-x-auto">
                         <Table hoverable>
                             <Table.Head>
-                            <Table.HeadCell>Title</Table.HeadCell>
+                            <Table.HeadCell>Tiêu đề</Table.HeadCell>
                             <Table.HeadCell>
-                                <span className="sr-only">Edit or delete</span>
+                                <span className="sr-only">Sửa hoặc xóa</span>
                             </Table.HeadCell>
                             </Table.Head>
                            
@@ -66,11 +66,11 @@ const ManageBlog = () => {
                                         {blog.title}
                                         </Table.Cell>
                                         <Table.Cell>
-                                            <Link to={`/admin/dashboard/editblog/${blog._id}`}>Edit</Link>
+                                            <Link to={`/admin/dashboard/editblog/${blog._id}`}>Sửa</Link>
                                         </Table.Cell>
                                         <Table.Cell>
                                         <Table.Cell>
-                                            <Button onClick={() => handleDelete(blog._id)}>Delete</Button>
+                                            <Button onClick={() => handleDelete(blog._id)}>Xóa</Button>
                                         </Table.Cell>
                                         </Table.Cell>
                                     </Table.Row>

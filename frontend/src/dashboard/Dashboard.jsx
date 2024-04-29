@@ -24,11 +24,11 @@ const Dashboard = () => {
                     <SideBar/>
                 </Col>
                 <Col>
-                    <h5> Welcome manager!</h5>
+                    <h5> Xin chào quản lý!</h5>
                     <div className='grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px]'>
                         <div className=' h-[100px] rounded-[8px] bg-white border-l-[4px] border-[#F6C23E] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out'>
                             <div>
-                                <h2 className='text-[11px] leading-[17px] font-bold'>REVENUE</h2>
+                                <h2 className='text-[11px] leading-[17px] font-bold'>DOANH THU</h2>
                                 <h1 className='text-[20px] leading-[24px] font-bold mt-[5px]'>${total}</h1>
                             </div>
                             <FaRegCalendarMinus fontSize={28} color="" />
@@ -37,21 +37,21 @@ const Dashboard = () => {
                         <div className=' h-[100px] rounded-[8px] bg-white border-l-[4px] border-[#F6C23E] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out'>
                             <div>
                                 <h2 className=' text-[11px] leading-[17px] font-bold'>
-                                    TOURS</h2>
+                                    SỐ LƯỢNG TOUR</h2>
                                 <h1 className='text-[20px] leading-[24px] font-bold mt-[5px]'>{tourCount}</h1>
                             </div>
                             <MdOutlineTour fontSize={28} />
                         </div>
                         <div className=' h-[100px] rounded-[8px] bg-white border-l-[4px] border-[#F6C23E] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out'>
                             <div>
-                                <h2 className=' text-[11px] leading-[17px] font-bold'>USER </h2>
+                                <h2 className=' text-[11px] leading-[17px] font-bold'>SỐ LƯỢNG TÀI KHOẢN </h2>
                                 <h1 className='text-[20px] leading-[24px] font-bold mt-[5px]'>{userCount}</h1>
                             </div>
                             <FaUser fontSize={28} />
                         </div>
                         <div className=' h-[100px] rounded-[8px] bg-white border-l-[4px] border-[#F6C23E] flex items-center justify-between px-[30px] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out'>
                             <div>
-                                <h2 className=' text-[11px] leading-[17px] font-bold'>BOOKINGS</h2>
+                                <h2 className=' text-[11px] leading-[17px] font-bold'>SỐ LƯỢNG ĐẶT TOUR</h2>
                                 <h1 className='text-[20px] leading-[24px] font-bold mt-[5px]'>{bookingCount}</h1>
                             </div>
                             <FaRegCalendarMinus fontSize={28} />

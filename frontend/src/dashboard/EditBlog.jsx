@@ -37,7 +37,7 @@ const EditBlog = () => {
            if(!res.ok) {
               return alert(result.message)
            }
-           return alert("Update succesfully!")
+           return alert("Cập nhật thành công!")
         } catch (error) {
            alert(error.message)
         }   
@@ -53,20 +53,20 @@ const EditBlog = () => {
                     </Col>
                     <Col className='sidebar__dashboard' onSubmit={handleClick}>
                         <div className="contact__form">
-                        <h5>Edit blog</h5>
+                        <h5>Sửa blog</h5>
                         <Form className='contact__info-form'>
                             <FormGroup>
-                                <input type="text" placeholder='Title' id='title' defaultValue={blog.title} onChange={handleChange} required/>
+                                <input type="text" placeholder='Tiêu đề' id='title' defaultValue={blog.title} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <input type="text" placeholder='Photo' id='photo' defaultValue={blog.photo} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
-                                <input type="text" placeholder='Content' id='content'  onChange={handleChange} required/>
+                                <input type="text" placeholder='Nội dung' id='content'  onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <div className="contact__button">
-                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Submit</Button>
+                                    <Button className='btn primary__btn w-25'  onSubmit={handleClick}>Lưu</Button>
                                 </div>
                             </FormGroup>
                         </Form>

@@ -33,7 +33,7 @@ const ManageTour = () => {
             const result = await res.json();
             return alert(result.message);
           }
-          return alert("Delete successful!")
+          return alert("Xóa thành công!")
         } catch (error) {
           alert(error.message);
         }
@@ -49,19 +49,19 @@ const ManageTour = () => {
                 </Col>
                 <Col className='sidebar__dashboard'>
                     <div className='flex items-center justify-between m-4'>
-                        <h5>Manage All Tour</h5>
-                        <h5>Total Tours: {tourCount}</h5>
+                        <h5>Quản lý Tour</h5>
+                        <h5>Tổng số tour: {tourCount}</h5>
                     </div>
                     <div className="overflow-x-auto">
                         <Table hoverable>
                             <Table.Head>
-                            <Table.HeadCell>Title</Table.HeadCell>
-                            <Table.HeadCell>Address</Table.HeadCell>
-                            <Table.HeadCell>Price</Table.HeadCell>
-                            <Table.HeadCell>Distance</Table.HeadCell>
-                            <Table.HeadCell>Max Group Size</Table.HeadCell>
+                            <Table.HeadCell>Tiêu đề</Table.HeadCell>
+                            <Table.HeadCell>Địa chỉ</Table.HeadCell>
+                            <Table.HeadCell>Giá</Table.HeadCell>
+                            <Table.HeadCell>Khoảng cách</Table.HeadCell>
+                            <Table.HeadCell>Số lượng khách tối đa</Table.HeadCell>
                             <Table.HeadCell>
-                                <span className="sr-only">Edit or delete</span>
+                                <span className="sr-only">Sửa hoặc xóa</span>
                             </Table.HeadCell>
                             </Table.Head>
                            
@@ -77,11 +77,11 @@ const ManageTour = () => {
                                         <Table.Cell>{tour.distance}</Table.Cell>
                                         <Table.Cell>{tour.maxGroupSize}</Table.Cell>
                                         <Table.Cell>
-                                            <Link to={`/admin/dashboard/edittour/${tour._id}`}>Edit</Link>
+                                            <Link to={`/admin/dashboard/edittour/${tour._id}`}>Sửa</Link>
                                         </Table.Cell>
                                         <Table.Cell>
                                         <Table.Cell>
-                                            <Button onClick={() => handleDelete(tour._id)}>Delete</Button>
+                                            <Button onClick={() => handleDelete(tour._id)}>Xóa</Button>
                                         </Table.Cell>
                                         </Table.Cell>
                                     </Table.Row>

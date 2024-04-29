@@ -174,7 +174,7 @@ const Booking = ({ tour, avgRating }) => {
                </ListGroupItem>
             </ListGroup>
             <Button className='btn primary__btn w-100 mt-4' onClick={handlePayClick}>Booking với Paypal</Button>
-            <span className='centered-text'>or</span>
+            <span className='centered-text'>Hoặc</span>
             <Button className='btn primary__btn w-100 mt-4' onClick={handleClick}>Booking với Email</Button>
          </div>
       </div>

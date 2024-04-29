@@ -33,7 +33,7 @@ const ManageBooking = () => {
             const result = await res.json();
             return alert(result.message);
           }
-          return alert("Delete successful!")
+          return alert("Xóa thành công!")
         } catch (error) {
           alert(error.message);
         }
@@ -49,17 +49,17 @@ const ManageBooking = () => {
                     <SideBar/>
                 </Col>
                 <Col className='sidebar__dashboard' lg='9'>
-                    <h5>Manage All Booking</h5>
+                    <h5>Quản lý Booking</h5>
                     <div className="overflow-x-auto">
                         <Table hoverable>
                             <Table.Head>
-                            <Table.HeadCell>Tour Name</Table.HeadCell>
-                            <Table.HeadCell>Full Name</Table.HeadCell>
-                            <Table.HeadCell>Guest Size</Table.HeadCell>
-                            <Table.HeadCell>Phone</Table.HeadCell>
-                            <Table.HeadCell>Book At</Table.HeadCell>
+                            <Table.HeadCell>Tên tour</Table.HeadCell>
+                            <Table.HeadCell>Họ tên</Table.HeadCell>
+                            <Table.HeadCell>Số lượng</Table.HeadCell>
+                            <Table.HeadCell>Số điện thoại</Table.HeadCell>
+                            <Table.HeadCell>Đặt vào</Table.HeadCell>
                             <Table.HeadCell>
-                                <span className="sr-only">Edit or delete</span>
+                                <span className="sr-only">Sửa hoặc xóa</span>
                             </Table.HeadCell>
                             </Table.Head>
                            
@@ -76,10 +76,10 @@ const ManageBooking = () => {
                                         <Table.Cell>{booking.bookAt}</Table.Cell>
                                         <Table.Cell>
                                         <Table.Cell>
-                                            <Link to={`/admin/dashboard/editbooking/${booking._id}`}>Edit</Link>
+                                            <Link to={`/admin/dashboard/editbooking/${booking._id}`}>Sửa</Link>
                                         </Table.Cell>
                                         <Table.Cell>
-                                            <Button onClick={() => handleDelete(booking._id)}>Delete</Button>
+                                            <Button onClick={() => handleDelete(booking._id)}>Xóa</Button>
                                         </Table.Cell>
                                         </Table.Cell>
                                     </Table.Row>
