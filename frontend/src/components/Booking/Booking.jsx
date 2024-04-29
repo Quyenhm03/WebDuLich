@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import './booking.css'
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap'
+
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import { BASE_URL } from '../../utils/config'
@@ -34,43 +35,47 @@ const Booking = ({ tour, avgRating }) => {
 
       try {
          if (!user || user === undefined || user === null) {
-            return alert('Vui lòng đăng nhập để tiếp tục!')
+            return alert('Vui lòng đăng nhập!')
          }
 
-         const res = await fetch(`${BASE_URL}/booking`, {
-            method: 'post',
-            headers: {
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            credentials: 'include',
-            body: JSON.stringify(booking)
-         })
+         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != ''){
+            const res = await fetch(`${BASE_URL}/booking`, {
+               method: 'post',
+               headers: {
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+               },
+               credentials: 'include',
+               body: JSON.stringify(booking)
+            })
 
-         const result = await res.json()
+            const result = await res.json()
 
-         if(!res.ok) {
-            return alert(result.message)
-         }
-         navigate('/thank-you')
+            if(!res.ok) {
+               return alert(result.message)
+            }
+            navigate('/thank-you')
 
-         //send email
-         const email = {booking: booking, serviceFee: serviceFee, totalAmount: totalAmount}
-         console.log(email)
-         const eres = await fetch(`${BASE_URL}/sendEmail`, {
-            method: 'post',
-            headers: {
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            credentials: 'include',
-            body: JSON.stringify(email)
-         })
+            //send email
+            const email = {booking: booking, serviceFee: serviceFee, totalAmount: totalAmount}
+            console.log(email)
+            const eres = await fetch(`${BASE_URL}/sendEmail`, {
+               method: 'post',
+               headers: {
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+               },
+               credentials: 'include',
+               body: JSON.stringify(email)
+            })
 
-         const eresult = await eres.json()
+            const eresult = await eres.json()
 
-         if(!eres.ok) {
-            return alert(eresult.message)
+            if(!eres.ok) {
+               return alert(eresult.message)
+            }
+         } else {
+            return alert('Vui lòng điền đầy đủ thông tin!')
          }
 
       } catch (error) {
@@ -84,32 +89,35 @@ const Booking = ({ tour, avgRating }) => {
 
       try {
          if (!user || user === undefined || user === null) {
-            return alert('Vui lòng đăng nhập để tiếp tục!')
+            return alert('Vui lòng đăng nhập!')
          }
+         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != ''){
+            const payment = {booking: booking, totalAmount: totalAmount}
+            // console.log(payment)
+            const res = await fetch(`${BASE_URL}/pay`, {
+               method: 'post',
+               // mode: 'no-cors',
+               headers: {
+                  'Access-Control-Allow-Origin': '*',
+                  'content-type': 'application/json',
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  
+               },
+               credentials: 'include',
+               body: JSON.stringify(payment)
+            })
 
-         const payment = {booking: booking, totalAmount: totalAmount}
-         // console.log(payment)
-         const res = await fetch(`${BASE_URL}/pay`, {
-            method: 'post',
-            // mode: 'no-cors',
-            headers: {
-               'Access-Control-Allow-Origin': '*',
-               'content-type': 'application/json',
-               'Authorization': `Bearer ${localStorage.getItem('token')}`,
-               
-            },
-            credentials: 'include',
-            body: JSON.stringify(payment)
-         })
+            // console.log(payment)
+            const result = await res.json()
 
-         // console.log(payment)
-         const result = await res.json()
-
-         if(!res.ok) {
-            return alert(result.message)
+            if(!res.ok) {
+               return alert(result.message)
+            }
+            window.location = result.forwardLink
+            // navigate('/thank-you')
+         } else {
+            return alert('Vui lòng điền đầy đủ thông tin!')
          }
-         window.location = result.forwardLink
-         // navigate('/thank-you')
 
       } catch (error) {
          alert(error.message)
@@ -139,9 +147,9 @@ const Booking = ({ tour, avgRating }) => {
                      onChange={handleChange} />
                </FormGroup>
                <FormGroup className='d-flex align-items-center gap-3'>
-                  <input type="date" placeholder='' id='Đặt vào' required
+                  <input type="date" placeholder='' id='bookAt' required
                      onChange={handleChange} />
-                  <input type="number" placeholder='Số lượng' id='guestSize' required
+                  <input type="number" placeholder='Số lượng khách' id='guestSize' required
                      onChange={handleChange} />
                </FormGroup>
             </Form>
@@ -153,7 +161,7 @@ const Booking = ({ tour, avgRating }) => {
          <div className="booking__bottom">
             <ListGroup>
                <ListGroupItem className='border-0 px-0'>
-                  <h5 className='d-flex align-items-center gap-1'>${booking.tourPrice} <i class='ri-close-line'></i> 1 người</h5>
+                  <h5 className='d-flex align-items-center gap-1'>${booking.tourPrice} <i class='ri-close-line'></i> 1 person</h5>
                   <span> ${booking.tourPrice}</span>
                </ListGroupItem>
                <ListGroupItem className='border-0 px-0'>
@@ -165,8 +173,8 @@ const Booking = ({ tour, avgRating }) => {
                   <span>${totalAmount}</span>
                </ListGroupItem>
             </ListGroup>
-            <Button className='btn primary__btn w-100 mt-4' onClick={handlePayClick}>Booking với PayPal</Button>
-            <span className='centered-text'>Hoặc</span>
+            <Button className='btn primary__btn w-100 mt-4' onClick={handlePayClick}>Booking với Paypal</Button>
+            <span className='centered-text'>or</span>
             <Button className='btn primary__btn w-100 mt-4' onClick={handleClick}>Booking với Email</Button>
          </div>
       </div>
