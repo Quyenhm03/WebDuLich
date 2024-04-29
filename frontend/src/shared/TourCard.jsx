@@ -15,7 +15,7 @@ const TourCard = ({ tour }) => {
          <Card>
             <div className="tour__img">
                <img src={photo} alt="tour-img" />
-               {featured && <span>Featured</span>}
+               {featured && <span>Nổi bật</span>}
             </div>
 
             <CardBody>
@@ -25,7 +25,7 @@ const TourCard = ({ tour }) => {
                   </span>
                   <span className="tour__rating d-flex align-items-center gap-1">
                      <i class='ri-star-fill'></i> {avgRating === 0 ? null : avgRating}
-                     {totalRating === 0 ? ('Not rated') : (<span>({reviews.length})</span>)}
+                     {totalRating === 0 ? ('Chưa có đánh giá') : (<span>({reviews.length})</span>)}
 
                   </span>
                </div>
@@ -33,13 +33,13 @@ const TourCard = ({ tour }) => {
                <h5 className='tour__title'><Link to={`/tours/${_id}`}>{title}</Link></h5>
 
                <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
-                  <h5>${price} <span> /per person</span></h5>
+                  <h5>${price} <span> /1 người</span></h5>
 
                   {/* <button className=' booking__btn'>
                      <Link to={`/tours/${_id}`}>Book Now</Link>
                   </button> */}
                   <Link to={`/tours/${_id}`}>
-                     <button className=' booking__btn'>Book Now</button>
+                     <button className=' booking__btn'>Book ngay</button>
                   </Link>
                </div>
             </CardBody>

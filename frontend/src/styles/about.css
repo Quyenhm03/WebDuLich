@@ -1,103 +1,100 @@
 .about {
-    padding-top   : 70px;
-    padding-bottom: 30px;
+   padding-top   : 70px;
+   padding-bottom: 30px;
+}
+
+.about__welcome p {
+font-size  : 1rem;
+color      : var(--text-color);
+line-height: 1.4rem;
+}
+
+.about__welcome h2 {
+   font-size    : 2.5rem;
+   font-weight  : 600;
+   margin-top   : 1rem;
+   margin-bottom: 2rem;
+   color        : var(--heading-color);
+}
+
+.contact {
+   padding      : 2rem;
+   border-radius: 0.5rem;
+   border       : 1px solid var(--secondary-color);
+   position     : sticky;
+   top          : 80px;
+}
+
+.contact__form {
+   padding-top: 1rem;
+}
+
+.contact__form h5 {
+   margin-bottom: 1rem;
+}
+
+.contact__form input {
+   width        : 100%;
+   padding      : 0.4rem;
+   border-radius: 0.5rem;
+   color        : var(--heading-color);
+   font-size    : 0.7rem;
+   border-bottom: 1px solid rgb(229, 231, 235);
+   border       : none;
+}
+
+.contact__form input:focus {
+   outline: none;
+}
+
+.contact__info-form {
+   padding: 0.2rem;
+   border : 1px solid rgb(229, 231, 235);
+}
+
+.contact__button Button:hover {
+   transform: scale(1.1);
+   transition: 0.5s;
+}
+
+.contact__button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
  }
 
- .about__welcome p {
- font-size  : 1rem;
- color      : var(--text-color);
- line-height: 1.4rem;
+ .about .contact.map-col {
+   padding: 0;
+   border: none;
+ }
+ 
+ .about .contact.map-col .iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Tỷ lệ khung bản đồ (4:3) */
+  overflow: hidden;
+}
+ 
+ .about .contact.map-col .iframe-container iframe {
+   position: absolute;
+   top: 0;
+   left: 10px;
+   width: 100%;
+   height: 100%;
+   border: none;
  }
 
- .about__welcome h2 {
-    font-size    : 2.5rem;
-    font-weight  : 600;
-    margin-top   : 1rem;
-    margin-bottom: 2rem;
-    color        : var(--heading-color);
- }
-
- .contact {
-    padding      : 2rem;
-    border-radius: 0.5rem;
-    border       : 1px solid var(--secondary-color);
-    position     : sticky;
-    top          : 80px;
- }
- 
- .contact__form {
-    padding-top: 1rem;
- }
- 
- .contact__form h5 {
-    margin-bottom: 1rem;
- }
- 
- .contact__form input {
-    width        : 100%;
-    padding      : 0.4rem;
-    border-radius: 0.5rem;
-    color        : var(--heading-color);
-    font-size    : 0.7rem;
-    border-bottom: 1px solid rgb(229, 231, 235);
-    border       : none;
- }
- 
- .contact__form input:focus {
-    outline: none;
- }
- 
- .contact__info-form {
-    padding: 0.2rem;
-    border : 1px solid rgb(229, 231, 235);
- }
-
- .contact__button Button:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
- }
-
- .contact__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ @media (max-width: 767px) {
+  .about .contact {
+    position: static;
   }
 
   .about .contact.map-col {
-    padding: 0;
-    border: none;
+    margin-top: 2rem;
   }
-  
+
   .about .contact.map-col .iframe-container {
-   position: relative;
-   width: 100%;
-   height: 0;
-   padding-bottom: 75%; /* Tỷ lệ khung bản đồ (4:3) */
-   overflow: hidden;
- }
-  
-  .about .contact.map-col .iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  @media (max-width: 767px) {
-   .about .contact {
-     position: static;
+     padding-bottom: 100%; /* Tỷ lệ khung bản đồ (1:1) */
    }
- 
-   .about .contact.map-col {
-     margin-top: 2rem;
-   }
-
-   .about .contact.map-col .iframe-container {
-      padding-bottom: 100%; /* Tỷ lệ khung bản đồ (1:1) */
-    }
- }
-
- 
- 
+}

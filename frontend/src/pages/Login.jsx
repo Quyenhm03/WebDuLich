@@ -102,22 +102,22 @@ const Login = () => {
                         <div className="user">
                            <img src={userIcon} alt="" />
                         </div>
-                        <h2>Login</h2>
+                        <h2>Đăng nhập</h2>
 
                         <Form onSubmit={handleClick}>
                            <FormGroup>
                               <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
-                              <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
+                              <input type="password" placeholder='Mật khẩu' id='password' onChange={handleChange} required />
                            </FormGroup>
-                           <Button className='btn secondary__btn auth__btn' type='submit'>Login</Button>
+                           <Button className='btn secondary__btn auth__btn' type='submit'>Đăng nhập</Button>
                         </Form>
-                        <p>Don't have an account? <Link to='/register'>Create</Link></p>
+                        <p>Bạn chưa có tài khoản? <Link to='/register'>Tạo tài khoản</Link></p>
                         <Button className='btn secondary__btn auth__btn' type='submit' onClick={handleGoogleClick}>
                            <div className='auth__btn__content'>
                               <img src={Google} alt="" />
-                              <span>Continue with google</span>
+                              <span>Tiếp tục với google</span>
                            </div>
                         </Button>
                            

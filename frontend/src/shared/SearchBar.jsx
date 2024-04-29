@@ -16,7 +16,7 @@ const SearchBar = () => {
       const maxGroupSize = maxGroupSizeRef.current.value
 
       if (location === '' || distance === '' || maxGroupSize === '') {
-         return alert('All fields are required!')
+         return alert('Vui lòng điền đầy đủ thông tin!')
       }
 
       const res = await fetch(`${BASE_URL}/tours/search/getTourBySearch?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`)
@@ -34,21 +34,21 @@ const SearchBar = () => {
             <FormGroup className='d-flex gap-3 form__group form__group-fast'>
                <span><i class='ri-map-pin-line'></i></span>
                <div>
-                  <h6>Location</h6>
-                  <input type="text" placeholder='Where are you going?' ref={locationRef} />
+                  <h6>Điểm đến</h6>
+                  <input type="text" placeholder='Bạn muốn đi đâu?' ref={locationRef} />
                </div>
             </FormGroup>
             <FormGroup className='d-flex gap-3 form__group form__group-fast'>
                <span><i class='ri-map-pin-time-line'></i></span>
                <div>
-                  <h6>Distance</h6>
-                  <input type="number" placeholder='Distance km' ref={distanceRef} />
+                  <h6>Khoảng cách</h6>
+                  <input type="number" placeholder='Khoảng cách km' ref={distanceRef} />
                </div>
             </FormGroup>
             <FormGroup className='d-flex gap-3 form__group form__group-last'>
                <span><i class='ri-group-line'></i></span>
                <div>
-                  <h6>Max People</h6>
+                  <h6>Số lượng</h6>
                   <input type="number" placeholder='0' ref={maxGroupSizeRef} />
                </div>
             </FormGroup>

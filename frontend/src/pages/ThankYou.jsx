@@ -11,10 +11,10 @@ const ThankYou = () => {
                <Col lg='12' className='pt-5 text-center'>
                   <div className="thank__you">
                      <span><i class='ri-checkbox-circle-line'></i></span>
-                     <h1 className='mb-3 fw-semibold'>Thank You</h1>
-                     <h3 className='mb-4'>Your Tour Is Bookked</h3>
+                     <h1 className='mb-3 fw-semibold'>Cảm ơn</h1>
+                     <h3 className='mb-4'>Tour của bạn đã được đặt thành công!</h3>
 
-                     <Button className='btn primary__btn w-25'><Link to='/home'>Back To Home</Link></Button>
+                     <Button className='btn primary__btn w-25'><Link to='/home'>Quay về trang chủ</Link></Button>
                   </div>
                </Col>
             </Row>

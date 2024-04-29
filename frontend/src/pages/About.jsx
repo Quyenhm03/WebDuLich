@@ -3,18 +3,27 @@ import Subtitle from '../shared/Subtitle'
 import '../styles/about.css'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import OurTeam from '../components/Our-team/OurTeam'
-import Newsletter from './../shared/Newsletter'
+
 
 const About = () => {
   return (
+   <>
+   
     <div className='about'>
       <section>
          <Container>
             <Row>
                <Col lg='12' className='about__welcome mb-5'>
-                  <Subtitle subtitle={'Welcome Travel World'} />
-                  <h2>We Help You Planning Your Journey</h2>
-                  <p>Treat yourself with a journey to your inner self. Visit a mystique and start your spiritual adventure with comes to exploring exotic place. We promise, you will enjoy each and every step you make.</p>
+                  <Subtitle subtitle={'Về chúng tôi'} />
+                  <h2>Chào mừng đến với TravelWorld</h2>
+                  <p>Chúng tôi là TracelWorld, nơi bạn khám phá mội góc cạnh của thế giới thông qua những hành trình thú vị.
+                     Từ những cảnh quan tuyệt đẹp đến văn hóa đa dạng, chúng tôi cam kết đưa bạn đến những trải nghiệm mới mẻ và
+                     khám phá những điều bạn chưa từng biết.<br />
+                     <br />
+                     Tại TravelWorls, chúng tôi hiểu rằng mỗi hành trình là một câu chuyện riêng và chúng tôi luôn cố gắng tạo ra những
+                     chuyến đi phù hợp với sở thích cá nhân và mong muốn của bạn. Hãy cùng chúng tôi bước chân ra khỏi vùng an toàn và khám
+                     phá thế giới đầy màu sắc. TravelWorld sẽ luôn đồng hành cùng bạn để mỗi khoảnh khắc đều tạo ra kỷ niệm.
+                  </p>
                   <img src="https://a3travel.webtravel.vn/files/files/about-01.png" alt=""/>
                </Col>
             </Row>
@@ -25,8 +34,8 @@ const About = () => {
          <Container>
             <Row>
                <Col lg='12' className='about__team mb-5'>
-                  <Subtitle subtitle={'Our team members'} />
-                  <h2>Meet Our Expert Agents</h2>
+                  <Subtitle subtitle={'Thành viên trong TravelWorld'} />
+                  <h2>Đội ngũ chuyên gia của chúng tôi</h2>
                </Col>
                <Col lg='12'>
                   <OurTeam/>
@@ -39,28 +48,28 @@ const About = () => {
          <Container>
             <Row>
                 <Col lg='12' className='about-contact mb-5'>
-                    <Subtitle subtitle={'Contact us'} />
+                    <Subtitle subtitle={'Liên hệ chúng tôi'} />
                 </Col>
                 <Col lg='6' className='contact mb-5 mb-lg-0'>
                     <div className="contact__form">
-                      <h5>Leave a reply</h5>
+                      <h5>Để lại phản hồi</h5>
                       <Form className='contact__info-form'>
                         <FormGroup>
-                            <input type="text" placeholder='Full Name' id='fullName' required/>
+                            <input type="text" placeholder='Họ tên' id='fullName' required/>
                         </FormGroup>
                         <FormGroup>
                             <input type="email" placeholder='Email' id='email' required/>
                         </FormGroup>
                         <FormGroup>
-                            <input type="text" placeholder='Subject' id='subject' required/>
+                            <input type="text" placeholder='Tiêu đề' id='subject' required/>
                         </FormGroup>
                         <FormGroup>
-                            <input type="text" placeholder='Comment' id='comment' required/>
+                            <input type="text" placeholder='Nội dung' id='comment' required/>
                         </FormGroup>
                       </Form>
                       <br/>
                       <div className="contact__button">
-                        <Button className='btn primary__btn w-25'>Send</Button>
+                        <Button className='btn primary__btn w-25'>Gửi</Button>
                       </div>
                     </div>
                 </Col>
@@ -75,8 +84,9 @@ const About = () => {
             </Row>
          </Container>
       </section>
-      <Newsletter />
     </div>
+    
+    </>
   )
 }
 

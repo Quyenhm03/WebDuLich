@@ -27,7 +27,7 @@ const BlogDetails = () => {
 
       try {
          if (!user || user === undefined || user === null) {
-            alert('Please sign in')
+            alert('Vui lòng đăng nhập!')
          }
          const commentObj = {
             username: user?.username,
@@ -87,13 +87,13 @@ const BlogDetails = () => {
 
                        
                         <div className="blog__comment mt-4">
-                           <h4>Comments ({comments?.length} comments)</h4>
+                           <h4>Bình luận ({comments?.length} bình luận)</h4>
 
                            <Form onSubmit={submitHandler}>
                               <div className="comment__input">
                                  <input type="text" ref={commentMsgRef} placeholder='share your thoughts' required />
                                  <button className='btn primary__btn text-white' type='submit'>
-                                    Submit
+                                    Gửi
                                  </button>
                               </div>
                            </Form>

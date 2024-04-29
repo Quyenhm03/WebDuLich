@@ -8,15 +8,15 @@ import { AuthContext } from '../../context/AuthContext'
 const nav__links = [
    {
       path: '/home',
-      display: 'Home'
+      display: 'Trang chủ'
    },
    {
       path: '/about',
-      display: 'About'
+      display: 'Liên hệ'
    },
    {
       path: '/tours',
-      display: 'Tours'
+      display: 'Tour du lịch'
    },
    {
       path: '/blog',
@@ -24,7 +24,7 @@ const nav__links = [
    },
    {
       path: '/admin/dashboard',
-      display: 'Dashboard'
+      display: 'Quản trị'
    }
 ]
 
@@ -34,7 +34,7 @@ const Header = () => {
    const navigate = useNavigate()
    const { user, dispatch } = useContext(AuthContext)
 
-   console.log(user)
+   // console.log(user)
 
    const logout = () => {
       dispatch({ type: 'LOGOUT' })
@@ -94,15 +94,15 @@ const Header = () => {
                      {user ? (
                         <>
                            <h5 className="mb-0">{user.username}</h5>
-                           <Button className="btn btn-dark" onClick={logout}>Logout</Button>
+                           <Button className="btn btn-dark" onClick={logout}>Đăng xuất</Button>
                         </>
                         ) : (
                         <>
                            <Button className="btn secondary__btn">
-                              <Link to="/login">Login</Link>
+                              <Link to="/login">Đăng nhập</Link>
                            </Button>
                            <Button className="btn primary__btn">
-                              <Link to="/register">Register</Link>
+                              <Link to="/register">Đăng ký</Link>
                            </Button>
                         </>
                      )}

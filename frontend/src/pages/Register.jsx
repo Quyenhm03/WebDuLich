@@ -94,25 +94,25 @@ const Register = () => {
                         <div className="user">
                            <img src={userIcon} alt="" />
                         </div>
-                        <h2>Register</h2>
+                        <h2>Đăng ký</h2>
 
                         <Form onSubmit={handleClick}>
                            <FormGroup>
-                              <input type="text" placeholder='Username' id='username' onChange={handleChange} required />
+                              <input type="text" placeholder='Tên tài khoản' id='username' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
                               <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
-                              <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
+                              <input type="password" placeholder='Mật khẩu' id='password' onChange={handleChange} required />
                            </FormGroup>
-                           <Button className='btn secondary__btn auth__btn' type='submit'>Create Account</Button>
+                           <Button className='btn secondary__btn auth__btn' type='submit'>Tạo tài khoảnt</Button>
                         </Form>
-                        <p>Already have an account? <Link to='/login'>Login</Link></p>
+                        <p>Bạn đã có tài khoản? <Link to='/login'>Đăng nhập</Link></p>
                         <Button className='btn secondary__btn auth__btn' type='submit' onClick={handleGoogleClick}>
                            <div className='auth__btn__content'>
                               <img src={Google} alt="" />
-                              <span>Continue with google</span>
+                              <span>Tiếp tục với google</span>
                            </div>
                         </Button>
                      </div>

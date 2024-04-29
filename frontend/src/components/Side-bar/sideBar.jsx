@@ -18,7 +18,7 @@ const sideBar = () => {
                 !loading && !error && (
                     <div>
                         <div className="sidebar">
-                            <h1>Post recent</h1>
+                            <h1>Bài đăng mới nhất</h1>
                             {
                                 blogs?.map((blog, index) => {
                                     if (index > 4) {

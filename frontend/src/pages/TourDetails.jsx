@@ -31,7 +31,7 @@ const TourDetails = () => {
 
       try {
          if (!user || user === undefined || user === null) {
-            alert('Please sign in')
+            alert('Vui lòng đăng nhập!')
          }
          const reviewObj = {
             username: user?.username,
@@ -63,7 +63,7 @@ const TourDetails = () => {
       window.scrollTo(0, 0)
    }, [tour])
 
-   return (
+   return (   
       <section>
          <Container>
             {loading && <h4 className='text-center pt-5'>LOADING.........</h4>}
@@ -88,17 +88,17 @@ const TourDetails = () => {
 
                            <div className="tour__extra-details">
                               <span><i class='ri-map-pin-2-line'></i> {city}</span>
-                              <span><i class='ri-money-dollar-circle-line'></i> {price}/ per person</span>
+                              <span><i class='ri-money-dollar-circle-line'></i> {price}/ 1 người</span>
                               <span><i class='ri-map-pin-time-line'></i> {distance} km</span>
-                              <span><i class='ri-group-line'></i> {maxGroupSize} people</span>
+                              <span><i class='ri-group-line'></i> {maxGroupSize} người</span>
                            </div>
-                           <h5>Description</h5>
+                           <h5>Mô tả</h5>
                            <p>{desc}</p>
                         </div>
 
                         {/* ============ TOUR REVIEWS SECTION START ============ */}
                         <div className="tour__reviews mt-4">
-                           <h4>Reviews ({reviews?.length} reviews)</h4>
+                           <h4>Đánh giá ({reviews?.length} đánh giá)</h4>
 
                            <Form onSubmit={submitHandler}>
                               <div className="d-flex align-items-center gap-3 mb-4 rating__group">
@@ -110,9 +110,9 @@ const TourDetails = () => {
                               </div>
 
                               <div className="review__input">
-                                 <input type="text" ref={reviewMsgRef} placeholder='share your thoughts' required />
+                                 <input type="text" ref={reviewMsgRef} placeholder='Chia sẻ suy nghĩ của bạn' required />
                                  <button className='btn primary__btn text-white' type='submit'>
-                                    Submit
+                                    Gửi
                                  </button>
                               </div>
                            </Form>
@@ -154,7 +154,6 @@ const TourDetails = () => {
          </Container>
          <Newsletter />
       </section>
-
    )
 }
 

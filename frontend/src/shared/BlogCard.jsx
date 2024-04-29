@@ -19,7 +19,7 @@ const BlogCard = ({ blog }) => {
 
                 <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
                         <Link to={`/blog/${_id}`}>
-                            <button className=' submit__btn'>Read more</button>
+                            <button className=' submit__btn'>Đọc thêm</button>
                         </Link>
                 </div>
                 </CardBody>
