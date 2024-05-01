@@ -13,7 +13,7 @@ const SearchResultList = () => {
 
    return (
       <>
-         <CommonSection title={'Tour Search Result'} />
+         <CommonSection title={'Kết quả tìm kiếm'} />
          <section>
             <Container>
                <Row>
