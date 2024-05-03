@@ -22,7 +22,7 @@ const Blog = () => {
 
    return (
       <>
-         <CommonSection title={"All Blogs"} />
+         <CommonSection title={"Blog du lịch"} />
 
          <section className='pt-0'>
             <Container>
