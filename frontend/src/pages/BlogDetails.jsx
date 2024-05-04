@@ -91,7 +91,7 @@ const BlogDetails = () => {
 
                            <Form onSubmit={submitHandler}>
                               <div className="comment__input">
-                                 <input type="text" ref={commentMsgRef} placeholder='share your thoughts' required />
+                                 <input type="text" ref={commentMsgRef} placeholder='Chia sẻ suy nghĩ của bạn' required />
                                  <button className='btn primary__btn text-white' type='submit'>
                                     Gửi
                                  </button>
