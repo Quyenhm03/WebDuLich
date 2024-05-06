@@ -8,7 +8,7 @@ export const createBlog = async (req, res) => {
       const savedBlog = await newBlog.save()
     
       res.status(200).json({ success: true, message: 'Successfully created', data: savedBlog })
-      console.log(data)
+      // console.log(data)
    } catch (error) {
       res.status(500).json({ success: false, message: 'Failed to create. Try again!' })
    }

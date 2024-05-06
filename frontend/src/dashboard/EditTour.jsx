@@ -4,11 +4,16 @@ import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import { BASE_URL } from './../utils/config.js'
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch.js'
+import './manageTour.css'
 
 const EditTour = () => {
     const {id} = useParams()
     const {data: tour} = useFetch(`${BASE_URL}/tours/${id}`)
     const [tourup, setTourUp] = useState(tour)
+
+    useEffect(() => {
+        setTourUp(tour);
+      }, [tour]);
 
     console.log(tour)
   
@@ -47,7 +52,6 @@ const EditTour = () => {
      }
   
   return (
-    <>
         <section>
             <Container>
                 <Row>
@@ -82,8 +86,9 @@ const EditTour = () => {
                             <FormGroup>
                                 <input type="number" placeholder='Số lượng khách tối đa' id='maxGroupSize' defaultValue={tour.maxGroupSize} onChange={handleChange} required/>
                             </FormGroup>
-                            <FormGroup>
-                                <input type="checkbox" id="featured" name="featured" checked= {tour.featured} onChange={handleChange}/>Tour nổi bật
+                            <FormGroup className='featured-checkbox'>
+                                <input type='checkbox' id='featured' name='featured' checked={tourup.featured} onChange={handleChange}/>
+                                <label htmlFor='featured'>Tour nổi bật</label>
                             </FormGroup>
                             <FormGroup>
                                 <div className="contact__button">
@@ -97,7 +102,6 @@ const EditTour = () => {
                 </Row>
             </Container>
         </section>
-    </>
   )
 }
 

@@ -1,0 +1,19 @@
+.featured-checkbox {
+    display: flex;
+   align-items: center;
+}
+  
+.featured-checkbox input[type='checkbox'] {
+  margin-right: 10px;
+  border: 2px solid #000;
+  padding: 2px;
+  width : 20px;
+}
+
+.featured-checkbox input[type='checkbox']:checked {
+  width : 20px;
+}
+
+.featured-checkbox label {
+    margin-bottom: 0;
+}

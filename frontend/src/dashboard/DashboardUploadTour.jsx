@@ -2,6 +2,7 @@ import React, { useState}from 'react'
 import SideBar from './SideBar'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import { BASE_URL } from './../utils/config.js'
+import './manageTour.css'
 
 const DashboardUploadTour = () => {
     const [tour, setTour] = useState({
@@ -52,7 +53,6 @@ const DashboardUploadTour = () => {
      }
   
   return (
-    <>
         <section>
             <Container>
                 <Row>
@@ -87,8 +87,9 @@ const DashboardUploadTour = () => {
                             <FormGroup>
                                 <input type="number" placeholder='Số lượng tối đa' id='maxGroupSize' onChange={handleChange} required/>
                             </FormGroup>
-                            <FormGroup>
-                                <input type="checkbox" id="featured" name="featured" onChange={handleChange}/>Tour nổi bật
+                            <FormGroup className='featured-checkbox'>
+                                <input type='checkbox' id='featured' name='featured' onChange={handleChange}/>
+                                <label htmlFor='featured'>Tour nổi bật</label>
                             </FormGroup>
                             <FormGroup>
                                 <div className="contact__button">
@@ -102,7 +103,6 @@ const DashboardUploadTour = () => {
                 </Row>
             </Container>
         </section>
-    </>
   )
 }
 
