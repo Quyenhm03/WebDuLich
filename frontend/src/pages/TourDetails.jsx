@@ -110,7 +110,7 @@ const TourDetails = () => {
                               </div>
 
                               <div className="review__input">
-                                 <input type="text" ref={reviewMsgRef} placeholder='Chia sẻ suy nghĩ của bạn' required />
+                                 <input type="text" ref={reviewMsgRef} placeholder='Chia sẻ suy nghĩ và đánh giá của bạn' required />
                                  <button className='btn primary__btn text-white' type='submit'>
                                     Gửi
                                  </button>

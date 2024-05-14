@@ -60,7 +60,17 @@
     transform: scale(1.1);
     color    : purple;
  }
+
+ .author__avatar {
+   width: 30px;
+   height: 30px;
+   border-radius: 60%;
+ }
  
+ .author__name {
+   color      :  var(--text-color);
+ }
+
  /* =============== RESPONSIVE ================ */
  @media only screen and (max-width: 576px) {
     .blog__title {

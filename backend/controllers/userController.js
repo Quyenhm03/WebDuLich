@@ -54,7 +54,7 @@ export const getSingleUser = async (req, res) => {
    }
 }
 
-//GetAll User
+//Get All User
 export const getAllUser = async (req, res) => {
    //console.log(page)
 

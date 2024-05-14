@@ -1,18 +1,65 @@
-.blog__content img {
-    width        : 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+
+.travel__blog-dt {
+   position: relative;
+   display: inline-block;
+   margin-bottom: -170px;
  }
  
- .blog__comment {
-    border-radius: 0.5rem;
-    border       : 1px solid var(--secondary-color);
-    padding      : 1.5rem;
+ .travel__blog-dt .photo__blog {
+   display: block;
+   width        : 98%;
+   height: 80%;
+   border-radius: 0.5rem;
+ }
+
+ .travel__blog-dt .set__bg {
+   position: absolute;
+   top : 0;
+   left: 1%;
+   width: 96%;
+   height: 80%;
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.023) 0%, rgba(0, 0, 0, 0.308) 100%);
+   z-index: 1;
+   border-radius: 0.5rem;
+ }
+
+ .travel__blog-dt .set__bg h1,
+ .travel__blog-dt .set__bg span {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   color: white;
+   text-align: center;
+   white-space: nowrap;
+   
  }
  
- .blog__info h2 {
-    font-size: 1.5rem;
-    color: var(--heading-color)
+ .travel__blog-dt .set__bg span {
+   width: 100%;
+   top : 92%;
+   transform: translate(-50%, -50%);
+   font-size  : 1.2rem;
+ }
+ 
+ .travel__blog-dt .set__bg h1 {
+   top: 86%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   z-index: 1;
+   font-size  : 2rem;
+ }
+
+.source p {
+   color: var(--heading-color);
+   line-height: 30px;
+   font-size  : 1rem;
+   font-style: italic;
+}
+
+ .blog__info {
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
  
  .blog__info p {
@@ -21,6 +68,34 @@
     color      : var(--text-color);
  }
  
+ .blog__content img {
+   width        : 100%;
+   border-radius: 0.5rem;
+   margin-bottom: 1rem;
+}
+
+ .blog__content h1 {
+   font-size: 25px;
+   margin-bottom: 5px;
+   text-align: left;
+ }
+
+ .blog__content i {
+   color      : var(--text-color);
+ }
+
+ .content h2 {
+   font-size: 20px;
+   margin-bottom: 10px;
+   text-align: left;
+ }
+
+ .blog__comment {
+   border-radius: 0.5rem;
+   border       : 1px solid var(--secondary-color);
+   padding      : 1.5rem;
+   }
+
  .comment__input {
     display: flex;
     align-items: center;

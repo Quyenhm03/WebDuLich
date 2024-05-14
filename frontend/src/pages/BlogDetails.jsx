@@ -17,7 +17,7 @@ const BlogDetails = () => {
    // fetch data from database
    const { data: blog, loading, error } = useFetch(`${BASE_URL}/blog/${id}`)
 
-   const { photo, title, content, comments} = blog
+   const { photo, title, content, comments, createdAt } = blog
 
    const options = { day: 'numeric', month: 'long', year: 'numeric' }
 
@@ -66,13 +66,26 @@ const BlogDetails = () => {
             {
                !loading && !error &&
                <Row>
+                  <Row>
+                     {/* <div className='photo-container'> */}
+                        <div className="travel__blog-dt">
+                           <img className="photo__blog" src={photo} alt="" />
+                           <div className='set__bg'>
+                              <h1>{title}</h1>
+                              <span>Marques Brown | {new Date(createdAt).toLocaleDateString('en-US', options)}</span> 
+                           </div>
+                        </div>
+                     {/* </div> */}
+                  </Row>
                   <Col lg='8'>
-                     <h2>{title}</h2>
+                    
                      <div className="blog__content">
-                        <img src={photo} alt="" />
-
+                        {/* <img src={photo} alt="" /> */}
+                        
+                        <br/>
+                        <br/>
                         <div className="blog__info">
-                           <h2>{title}</h2>
+                           
                            <div className='content'>
                             {
                                 content?.map(icontent => (
@@ -84,7 +97,9 @@ const BlogDetails = () => {
                             }                  
                            </div>
                         </div>
-
+                        {/* <div className='source' style={{ textAlign: 'right'}}>
+                           <p>Travel World tổng hợp</p>
+                        </div> */}
                        
                         <div className="blog__comment mt-4">
                            <h4>Bình luận ({comments?.length} bình luận)</h4>
@@ -119,7 +134,7 @@ const BlogDetails = () => {
                               }
                            </ListGroup>
                         </div>
-                       
+                        
                      </div>
                   </Col>
                   <Col lg='3'>

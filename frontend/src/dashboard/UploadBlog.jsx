@@ -89,19 +89,19 @@ const UploadBlog = () => {
                         <input type='text' placeholder='Nội dung đoạn' id='desc' value={item.desc} onChange={e => handleContentChange(index, e)} required />
                       </FormGroup>
                       <Button className='btn primary__btn' onClick={() => removeContent(index)}>
-                        Remove Content
+                        Xóa nội dung
                       </Button>
                     </div>
                   ))}
                    <br />
                   <Button className='btn primary__btn' onClick={addContent}>
-                    Add Content
+                    Thêm nội dung
                   </Button>
                   <br />
                   <br/>
                   <div className='contact__button'>
                     <Button className='btn primary__btn w-25' onSubmit={handleClick}>
-                      Submit
+                      Lưu
                     </Button>
                   </div>
                 </Form>

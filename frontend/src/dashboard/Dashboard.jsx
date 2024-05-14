@@ -6,15 +6,36 @@ import { FaUser } from "react-icons/fa6";
 import { MdOutlineTour } from "react-icons/md";
 import { BASE_URL } from '../utils/config'
 import UseFetch from '../hooks/useFetch'
+import { Table } from 'flowbite-react'
+import ColumnChart from './ColumnChart'
+
 
 const Dashboard = () => {
     const { data: tourCount } = UseFetch(`${BASE_URL}/tours/search/getTourCount`)
     const { data: userCount } = UseFetch(`${BASE_URL}/users/search/getUserCount`)
     const { data: bookingCount } = UseFetch(`${BASE_URL}/booking/search/getBookingCount`)
     const { data: bookings } = UseFetch(`${BASE_URL}/booking`)
-    const total = bookings.map(booking => {
+    const total = bookings?.map(booking => {
         return booking.tourPrice*booking.guestSize + 10;
-    }).reduce((acc, cur) => acc+cur, 0)  
+    }).reduce((acc, cur) => acc+cur, 0) 
+    
+    // Đếm số lượng đặt tour cho từng tour
+    const tourCounts = {};
+    bookings?.forEach(booking => {
+    const { tourName } = booking;
+    if (tourCounts[tourName]) {
+        tourCounts[tourName]++;
+    } else {
+        tourCounts[tourName] = 1;
+    }
+    });
+
+    // Chuyển đổi đối tượng đếm thành mảng các cặp tên tour và số lượng đặt
+    const tourCountsArray = Object.entries(tourCounts);
+
+    tourCountsArray.sort((a, b) => b[1] - a[1]);
+
+    const popularTours = tourCountsArray.slice(0, 5);
 
   return (
     <section>
@@ -57,6 +78,42 @@ const Dashboard = () => {
                             <FaRegCalendarMinus fontSize={28} />
                         </div>
                     </div>
+                    <br/>
+                    <Row>
+                    <Col lg='6'>
+                        <h5>Top 5 tour được đặt nhiều nhất</h5>
+                        <br/>
+                        <div className="overflow-x-auto">
+                            <Table hoverable>
+                                <Table.Head>
+                                <Table.HeadCell>Tiêu đề</Table.HeadCell>
+                                <Table.HeadCell>Số lượt đặt</Table.HeadCell>
+                                </Table.Head>
+                            
+                                <Table.Body className="divide-y">
+                                {
+                                    popularTours?.map(tour => (
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={tour[0]}>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            {tour[0]}
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            {tour[1]}
+                                            </Table.Cell>
+                                            
+                                        </Table.Row>
+                                    ))
+
+                                }
+                                </Table.Body>
+                            </Table>
+                            
+                        </div>
+                    </Col>
+                    <Col lg='6'>
+                        <ColumnChart />
+                    </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>

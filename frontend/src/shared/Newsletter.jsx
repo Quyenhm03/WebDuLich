@@ -17,7 +17,7 @@ const NewsLetter = () => {
                         <button className="btn newsletter__btn">Nhận ưu đãi</button>
                      </div>
                      <br/>
-                     <p>Đừng bỏ lỡ cơ hội! Hãy đăng ký ngay để nhận được nhứng thông tin du lịch hữu ích. Chúng tôi sẽ đem đến
+                     <p>Đừng bỏ lỡ cơ hội! Hãy đăng ký ngay để nhận được những thông tin du lịch hữu ích. Chúng tôi sẽ đem đến
                         cho bạn những tin tức mới nhất về các địa điểm thú vị, gợi ý hành trình và những ưu đãi độc quyền.
                         <br/>
                         Hãy cùng chúng tôi chẩn bị cho những chuyến phiêu lưu tuyệt vời và khám phá thế giới đầy màu sắc!
