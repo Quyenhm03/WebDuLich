@@ -9,6 +9,8 @@ const DashboardUploadTour = () => {
         title: '',
         city: '',
         address: '',
+        departure: '',
+        timeTour: '',
         distance: '',
         photo: '',
         maxGroupSize: 0,
@@ -28,8 +30,7 @@ const DashboardUploadTour = () => {
         e.preventDefault()
         console.log(tour)
   
-        try {
-  
+        try {         
            const res = await fetch(`${BASE_URL}/tours`, {
               method: 'post',
               headers: {
@@ -70,7 +71,13 @@ const DashboardUploadTour = () => {
                                 <input type="text" placeholder='Thành phố' id='city' onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
+                                <input type="text" placeholder='Khởi hành' id='departure' onChange={handleChange} required/>
+                            </FormGroup>
+                            <FormGroup>
                                 <input type="text" placeholder='Địa chỉ' id='address' onChange={handleChange} required/>
+                            </FormGroup>
+                            <FormGroup>
+                                <input type="text" placeholder='Thời gian tour' id='timeTour' onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <input type="number" placeholder='Khoảng cách' id='distance' onChange={handleChange} required/>

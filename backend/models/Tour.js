@@ -35,7 +35,26 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-
+    departure: {
+      type : String,
+      required: true,
+    },
+    timeTour: {
+      type: String,
+      required: true,
+    },
+    schedule: [
+      {
+        time: {
+          type: String,
+          required: true
+        },
+        content: [{
+          type: String,
+          required: true
+        }],
+      }
+    ],
     reviews: [
       {
         type: mongoose.Types.ObjectId,

@@ -9,6 +9,7 @@ import Newsletter from '../shared/Newsletter'
 import useFetch from '../hooks/useFetch'
 import { BASE_URL } from '../utils/config'
 import { AuthContext } from '../context/AuthContext'
+import TourSchedule from '../shared/TourShedule'
 
 const TourDetails = () => {
    const { id } = useParams()
@@ -19,7 +20,7 @@ const TourDetails = () => {
    // fetch data from database
    const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`)
 
-   const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize } = tour
+   const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize, departure, timeTour, schedule } = tour
 
    const { totalRating, avgRating } = calculateAvgRating(reviews)
 
@@ -87,7 +88,9 @@ const TourDetails = () => {
                            </div>
 
                            <div className="tour__extra-details">
+                              <span><i class="ri-flight-takeoff-line"></i> {departure}</span>
                               <span><i class='ri-map-pin-2-line'></i> {city}</span>
+                              <span><i class="ri-calendar-schedule-line"></i> {timeTour}</span>
                               <span><i class='ri-money-dollar-circle-line'></i> {price}/ 1 người</span>
                               <span><i class='ri-map-pin-time-line'></i> {distance} km</span>
                               <span><i class='ri-group-line'></i> {maxGroupSize} người</span>
@@ -95,7 +98,11 @@ const TourDetails = () => {
                            <h5>Mô tả</h5>
                            <p>{desc}</p>
                         </div>
-
+                        <br/>
+                        {/* ============ TOUR REVIEWS SECTION START ============ */}
+                        <div className='tour__schedule'>
+                           <TourSchedule schedule = {schedule}/>
+                        </div>
                         {/* ============ TOUR REVIEWS SECTION START ============ */}
                         <div className="tour__reviews mt-4">
                            <h4>Đánh giá ({reviews?.length} đánh giá)</h4>

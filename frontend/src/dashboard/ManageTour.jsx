@@ -47,7 +47,7 @@ const ManageTour = () => {
                 <Col lg='3'>
                     <SideBar/>
                 </Col>
-                <Col className='sidebar__dashboard'>
+                <Col lg='9' className='sidebar__dashboard'>
                     <div className='flex items-center justify-between m-4'>
                         <h5>Quản lý Tour</h5>
                         <h5>Tổng số tour: {tourCount}</h5>
@@ -56,9 +56,10 @@ const ManageTour = () => {
                         <Table hoverable>
                             <Table.Head>
                             <Table.HeadCell>Tiêu đề</Table.HeadCell>
+                            <Table.HeadCell>Khởi hành</Table.HeadCell>
                             <Table.HeadCell>Địa chỉ</Table.HeadCell>
+                            <Table.HeadCell>Thời gian tour</Table.HeadCell>
                             <Table.HeadCell>Giá</Table.HeadCell>
-                            <Table.HeadCell>Khoảng cách</Table.HeadCell>
                             <Table.HeadCell>Số lượng khách tối đa</Table.HeadCell>
                             <Table.HeadCell>
                                 <span className="sr-only">Sửa hoặc xóa</span>
@@ -72,9 +73,10 @@ const ManageTour = () => {
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                         {tour.title}
                                         </Table.Cell>
-                                        <Table.Cell>{tour.address}</Table.Cell>
+                                        <Table.Cell>{tour.departure}</Table.Cell>
+                                        <Table.Cell>{tour.city}</Table.Cell>
+                                        <Table.Cell>{tour.timeTour}</Table.Cell>
                                         <Table.Cell>{tour.price}</Table.Cell>
-                                        <Table.Cell>{tour.distance}</Table.Cell>
                                         <Table.Cell>{tour.maxGroupSize}</Table.Cell>
                                         <Table.Cell>
                                             <Link to={`/admin/dashboard/edittour/${tour._id}`}>Sửa</Link>

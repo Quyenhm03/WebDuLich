@@ -15,7 +15,7 @@ const EditTour = () => {
         setTourUp(tour);
       }, [tour]);
 
-    console.log(tour)
+    // console.log(tour)
   
      const handleChange = e => {
         const { id, value, checked, type } = e.target;
@@ -26,7 +26,7 @@ const EditTour = () => {
 
      const handleClick = async e => {
         e.preventDefault()
-        //console.log(tour)
+        console.log(tourup)
   
         try {
   
@@ -69,7 +69,13 @@ const EditTour = () => {
                                 <input type="text" placeholder='Thành phố' id='city' defaultValue={tour.city} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
+                                <input type="text" placeholder='Khởi hành' id='departure' defaultValue={tour.departure} onChange={handleChange} required/>
+                            </FormGroup>
+                            <FormGroup>
                                 <input type="text" placeholder='Địa chỉ' id='address' defaultValue={tour.address} onChange={handleChange} required/>
+                            </FormGroup>
+                            <FormGroup>
+                                <input type="text" placeholder='Thời gian tour' id='timeTour' defaultValue={tour.timeTour} onChange={handleChange} required/>
                             </FormGroup>
                             <FormGroup>
                                 <input type="number" placeholder='Khoảng cách' id='distance' defaultValue={tour.distance} onChange={handleChange} required/>

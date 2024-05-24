@@ -3,9 +3,9 @@
     border-radius: 0.5rem;
     margin-bottom: 1rem;
  }
- 
+
  .tour__info,
- .tour__reviews {
+ .tour__reviews, .tour__schedule {
     border-radius: 0.5rem;
     border       : 1px solid var(--secondary-color);
     padding      : 1.5rem;
@@ -35,7 +35,7 @@
     margin-top   : 1rem;
     margin-bottom: 2.5rem;
  }
- 
+
  .tour__info h5 {
     margin-bottom: 1rem;
     font-size    : 1.3rem;
@@ -43,7 +43,7 @@
  
  .tour__info p {
     line-height: 30px;
-    font-size  : 1rem;
+    font-size  : 0.9rem;
     color      : var(--text-color);
  }
  
