@@ -70,7 +70,6 @@ export const getAllTour = async (req, res) => {
    }
 }
 
-
 // Get tour by search
 export const getTourBySearch = async (req, res) => {
 
@@ -88,6 +87,7 @@ export const getTourBySearch = async (req, res) => {
       res.status(404).json({ success: false, message: 'Not Found' })
    }
 }
+
 
 //Get featured Tour
 export const getFeaturedTour = async (req, res) => {

@@ -60,7 +60,7 @@ const ManageTour = () => {
                             <Table.HeadCell>Địa chỉ</Table.HeadCell>
                             <Table.HeadCell>Thời gian tour</Table.HeadCell>
                             <Table.HeadCell>Giá</Table.HeadCell>
-                            <Table.HeadCell>Số lượng khách tối đa</Table.HeadCell>
+                            <Table.HeadCell>Số lượng khách</Table.HeadCell>
                             <Table.HeadCell>
                                 <span className="sr-only">Sửa hoặc xóa</span>
                             </Table.HeadCell>

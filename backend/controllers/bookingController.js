@@ -40,6 +40,21 @@ export const getAllBooking = async(req,res) => {
    }
 } 
 
+export const getBookingPage = async (req, res) => {
+   //For pagination
+   const page = parseInt(req.query.page)
+
+   //console.log(page)
+
+   try {
+      const books = await Booking.find().skip(page * 8).limit(8)
+
+      res.status(200).json({success:true, message:"Successful!", data:books})
+   } catch (error) {
+      res.status(500).json({success:false, message:"Internal server error!"})
+   }
+}
+
 //Get booking count 
 export const getBookingCount = async(req,res) => {
    try {

@@ -57,9 +57,10 @@ export const getSingleUser = async (req, res) => {
 //Get All User
 export const getAllUser = async (req, res) => {
    //console.log(page)
-
+   const page = parseInt(req.query.page)
+   
    try {
-      const users = await User.find({})
+      const users = await User.find({}).skip(page * 8).limit(8)
 
       res.status(200).json({ success: true, message: 'Successfully', data: users })
    } catch (error) {

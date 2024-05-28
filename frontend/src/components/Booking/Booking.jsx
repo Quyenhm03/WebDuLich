@@ -91,7 +91,7 @@ const Booking = ({ tour, avgRating }) => {
          if (!user || user === undefined || user === null) {
             return alert('Vui lòng đăng nhập!')
          }
-         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != ''){
+         if(booking.fullName != '' && booking.phone != '' && booking.bookAt != '' && booking.guestSize >= 1){
             const payment = {booking: booking, totalAmount: totalAmount}
             // console.log(payment)
             const res = await fetch(`${BASE_URL}/pay`, {
@@ -116,7 +116,7 @@ const Booking = ({ tour, avgRating }) => {
             window.location = result.forwardLink
             // navigate('/thank-you')
          } else {
-            return alert('Vui lòng điền đầy đủ thông tin!')
+            return alert('Vui lòng điền đầy đủ thông tin hợp lệ!')
          }
 
       } catch (error) {

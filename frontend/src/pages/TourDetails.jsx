@@ -90,7 +90,7 @@ const TourDetails = () => {
                            <div className="tour__extra-details">
                               <span><i class="ri-flight-takeoff-line"></i> {departure}</span>
                               <span><i class='ri-map-pin-2-line'></i> {city}</span>
-                              <span><i class="ri-calendar-schedule-line"></i> {timeTour}</span>
+                              <span><i class="ri-calendar-schedule-line"></i> {timeTour} ngày</span>
                               <span><i class='ri-money-dollar-circle-line'></i> {price}/ 1 người</span>
                               <span><i class='ri-map-pin-time-line'></i> {distance} km</span>
                               <span><i class='ri-group-line'></i> {maxGroupSize} người</span>

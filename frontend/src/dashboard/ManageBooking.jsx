@@ -10,7 +10,7 @@ const ManageBooking = () => {
     const [pageCount, setPageCount] = useState(0)
     const [page, setPage] = useState(0)
 
-    const { data: bookings } = UseFetch(`${BASE_URL}/booking?page=${page}`)
+    const { data: bookings } = UseFetch(`${BASE_URL}/booking/bookingPage/getBooking?page=${page}`)
     const { data: bookingCount } = UseFetch(`${BASE_URL}/booking/search/getBookingCount`)
 
     useEffect(() => {

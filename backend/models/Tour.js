@@ -40,7 +40,7 @@ const tourSchema = new mongoose.Schema(
       required: true,
     },
     timeTour: {
-      type: String,
+      type: Number,
       required: true,
     },
     schedule: [
