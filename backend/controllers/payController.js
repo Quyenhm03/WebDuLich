@@ -90,5 +90,5 @@ export const paySuccess = (req, res) => {
 }
 
 export const payCancel = (req,res) => {
-    return res.redirect("https://webdulich-fe.onrender.com")
+    return res.redirect("http://localhost:3000")
 }
