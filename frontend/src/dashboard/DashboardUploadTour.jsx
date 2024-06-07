@@ -17,7 +17,8 @@ const DashboardUploadTour = () => {
         price: 0,
         featured: false,
         desc: '',
-        schedule: [{time: '', content: ['']}]
+        schedule: [{time: '', content: ['']}],
+        map: '',
      })
 
      const handleScheduleChange = (index, e) => {
@@ -187,6 +188,9 @@ const DashboardUploadTour = () => {
                             </FormGroup>
                             <FormGroup>
                                 <input type="number" placeholder='Số lượng tối đa' id='maxGroupSize' onChange={handleChange} required/>
+                            </FormGroup>
+                            <FormGroup>
+                                <input type="text" placeholder='Địa chỉ map' id='map' onChange={handleChange} required/>
                             </FormGroup>
                             {renderScheduleInputs()}
                             <br/>

@@ -208,6 +208,16 @@ const EditTour = () => {
                     required
                   />
                 </FormGroup>
+                <FormGroup>
+                  <input
+                    type="text"
+                    placeholder="Địa chỉ map"
+                    id="map"
+                    defaultValue={tour.map}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormGroup>
                 {tourup.schedule &&
                   tourup.schedule.map((item, index) => (
                     <div key={index}>
