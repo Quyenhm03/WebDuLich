@@ -33,7 +33,7 @@ const SearchBar = () => {
       const maxGroupSize = maxGroupSizeRef.current.value
 
       if (location === '' || departure === '' || maxGroupSize === '') {
-         return alert('All fields are required!')
+         return alert('Vui lòng điền đầy đủ thông tin!')
       }
 
       const res = await fetch(`${BASE_URL}/tours/search/getTourBySearch?departure=${departure}&city=${location}&maxGroupSize=${maxGroupSize}`)

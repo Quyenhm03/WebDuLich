@@ -5,7 +5,7 @@
  }
 
  .tour__info,
- .tour__reviews, .tour__schedule {
+ .tour__reviews, .tour__schedule, .google__map {
     border-radius: 0.5rem;
     border       : 1px solid var(--secondary-color);
     padding      : 1.5rem;
@@ -114,7 +114,18 @@
     font-size: 1rem;
     color: var(--secondary-color);
  }
- 
+
+ .google__map iframe {
+   width: 800px;
+   height: 400px;
+}
+
+.google__map h2 {
+   font-size: 1.5rem;
+   margin-bottom: 18px;
+   padding-bottom: 1rem;
+   border-bottom : 1px solid rgb(229, 231, 235);
+}
  
  /* =============== RESPONSIVE ================ */
  @media only screen and (max-width: 768px) {

@@ -20,7 +20,7 @@ const TourDetails = () => {
    // fetch data from database
    const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`)
 
-   const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize, departure, timeTour, schedule } = tour
+   const { photo, title, desc, price, reviews, city, address, distance, maxGroupSize, departure, timeTour, schedule, map } = tour
 
    const { totalRating, avgRating } = calculateAvgRating(reviews)
 
@@ -99,10 +99,21 @@ const TourDetails = () => {
                            <p>{desc}</p>
                         </div>
                         <br/>
-                        {/* ============ TOUR REVIEWS SECTION START ============ */}
+
                         <div className='tour__schedule'>
                            <TourSchedule schedule = {schedule}/>
                         </div>
+                        <br/>
+
+                        <div className='google__map'>
+                           <h2>Thông tin địa điểm</h2>
+                           <iframe src= {map}
+                                    width="100%" height="100%" 
+                                    allowFullScreen loading="lazy" 
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Responsive Google Map"></iframe>
+                        </div>
+
                         {/* ============ TOUR REVIEWS SECTION START ============ */}
                         <div className="tour__reviews mt-4">
                            <h4>Đánh giá ({reviews?.length} đánh giá)</h4>
