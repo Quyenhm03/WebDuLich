@@ -24,7 +24,8 @@ const ManageBlog = () => {
           const res = await fetch(`${BASE_URL}/blog/${id}`, {
             method: 'delete',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                'user': `${localStorage.getItem('user')}`
             },
             credentials: 'include'
           });

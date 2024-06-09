@@ -24,7 +24,8 @@ const ManageBooking = () => {
           const res = await fetch(`${BASE_URL}/booking/${id}`, {
             method: 'delete',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                'user': `${localStorage.getItem('user')}`
             },
             credentials: 'include'
           });

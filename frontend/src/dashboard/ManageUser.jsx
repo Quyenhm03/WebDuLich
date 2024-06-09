@@ -23,7 +23,8 @@ const ManageUser = () => {
           const res = await fetch(`${BASE_URL}/users/${id}`, {
             method: 'delete',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                'user': `${localStorage.getItem('user')}`
             },
             credentials: 'include'
           });

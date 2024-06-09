@@ -80,7 +80,8 @@ const EditTour = () => {
         method: 'put',
         headers: {
           'content-type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'user': `${localStorage.getItem('user')}`
         },
         credentials: 'include',
         body: JSON.stringify(tourup),

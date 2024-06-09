@@ -13,7 +13,8 @@ const useFetch = (url) => {
             const res = await fetch(url, {
                method: 'GET',
                headers: {
-                  'Authorization': `Bearer ${localStorage.getItem('token')}`
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                  'user': `${localStorage.getItem('user')}`
                },
                credentials: 'include'
             })
