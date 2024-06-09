@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://webdulich.onrender.com'
+export const BASE_URL = 'https://webdulich.onrender.com/api/v1'
