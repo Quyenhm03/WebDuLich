@@ -45,6 +45,7 @@ const Login = () => {
          localStorage.setItem('token', result.accessToken)
          // console.log(localStorage.getItem('token'))
          dispatch({type:"LOGIN_SUCCESS", payload:result.data})
+         localStorage.setItem('role', result.data.role)
          navigate('/')
       } catch(err) {
          dispatch({type:"LOGIN_FAILURE", payload:err.message})
@@ -82,6 +83,7 @@ const Login = () => {
 
          localStorage.setItem('token', dt.accessToken)
          dispatch({type:"LOGIN_SUCCESS", payload:dt.data})
+         localStorage.setItem('role', dt.data.role)
          navigate('/')
       } catch (err) {
          dispatch({type:"LOGIN_FAILURE", payload:err.message})

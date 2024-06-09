@@ -28,29 +28,65 @@ export const verifyToken = (req, res, next) => {
          return res.status(401).json({ success: false, message: "Token is invalid" })
       }
 
-      req.user = user
+      // req.user = user
       next()
    })
 }
 
 
 export const verifyUser = (req, res, next) => {
-   verifyToken(req, res, next, () => {
-      if (req.user.id === req.params.id || req.headers.user.role === 'admin') {
-         next()
-      } else {
-         return res.status(401).json({ success: false, message: "You are not authenticated" })
+   const token = req.headers.authorization
+
+   if (!token) {
+      return res.status(401).json({ success: false, message: "You are not authorize!" })
+   }
+
+   // if token is exist then verify the token
+   jwt.verify(token.split(' ')[1], process.env.JWT_SECRET_KEY, (err, user) => {
+      if (err) {
+         return res.status(401).json({ success: false, message: "Token is invalid" })
       }
+
+      if (req.headers.role !== 'admin' && req.headers.role !== 'user') {
+         return res.status(401).json({ success: false, message: "You are not authorize" })
+      }
+        
+      next()
    })
+   // verifyToken(req, res, next, () => {
+   //    if (req.headers.role === 'user' || req.headers.role === 'admin') {
+   //       next()
+   //    } else {
+   //       return res.status(401).json({ success: false, message: "You are not authenticated" })
+   //    }
+   // })
 }
 
 
 export const verifyAdmin = (req, res, next) => {
-   verifyToken(req, res, next, () => {
-      if (req.headers.user.role === 'admin') {
-         next()
-      } else {
+   const token = req.headers.authorization
+
+   if (!token) {
+      return res.status(401).json({ success: false, message: "You are not authorize!" })
+   }
+
+   // if token is exist then verify the token
+   jwt.verify(token.split(' ')[1], process.env.JWT_SECRET_KEY, (err, user) => {
+      if (err) {
+         return res.status(401).json({ success: false, message: "Token is invalid" })
+      }
+
+      if (req.headers.role !== 'admin') {
          return res.status(401).json({ success: false, message: "You are not authorize" })
       }
+
+      next()
    })
+   // verifyToken(req, res, next, () => {
+   //    if (req.headers.role === 'admin') {
+   //       next()
+   //    } else {
+   //       return res.status(401).json({ success: false, message: "You are not authorize" })
+   //    }
+   // })
 } 

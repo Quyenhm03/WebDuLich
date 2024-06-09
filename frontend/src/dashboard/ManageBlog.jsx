@@ -25,7 +25,7 @@ const ManageBlog = () => {
             method: 'delete',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'user': `${localStorage.getItem('user')}`
+                'role': `${localStorage.getItem('role')}`
             },
             credentials: 'include'
           });

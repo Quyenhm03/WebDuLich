@@ -39,7 +39,7 @@ const BlogDetails = () => {
             headers: {
                'content-type': 'application/json',
                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-               'user': `${localStorage.getItem('user')}`
+               'role': `${localStorage.getItem('role')}`
             },
             credentials: 'include',
             body: JSON.stringify(commentObj)
